@@ -723,18 +723,9 @@ body {
 	left: -15px;
 	right: 0;
 	height: 2px;
-	background-color: #282828
+	background-color: #c0c0c0
 }
 
-.intro--banner::after {
-	content: "";
-	position: absolute;
-	bottom: 18px;
-	left: 0;
-	width: 30px;
-	height: 4px;
-	background-color: #858585
-}
 
 .intro--banner h1 {
 	margin-bottom: 0px;
@@ -812,7 +803,7 @@ body {
 .intro--options>a {
 	max-width: 250px;
 	text-decoration: none;
-	color: #282828;
+	color: #cacaca75;
 	-webkit-transition: color .2s ease-in-out;
 	transition: color .2s ease-in-out
 }
@@ -888,9 +879,7 @@ body {
 		height: auto
 	}
 	.intro--banner::before,
-	.intro--banner::after {
-		display: none
-	}
+
 	.intro--banner h1 {
 		margin-top: 0
 	}
