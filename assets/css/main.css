@@ -719,7 +719,7 @@ body {
 .intro--banner::before {
 	content: "";
 	position: absolute;
-	bottom: 20px;
+	bottom: 15px;
 	left: -15px;
 	right: 0;
 	height: 2px;
