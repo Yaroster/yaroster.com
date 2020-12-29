@@ -3,5 +3,5 @@ Source code for my website ! <br>
 > (Forked from BuckyMaler's Global) <br>
 - Things to fix:
 - [ ] Slide right/left when clicking on logos in "Projects" tab
-- [ ] Fix Mobile view for resolutions under iPhone X
+- [X] Fix Mobile view for resolutions under iPhone X
 - [ ] Hide header after scolling
