@@ -1772,9 +1772,10 @@ body {
 	color: #0C0C0C;
 	border: none;
 	cursor: pointer;
+	opacity: 0.8;
 }
 .dropbtn:hover{
-	opacity: 0.9;
+	opacity: 1;
 }
 .dropdown {
 	position: relative;
