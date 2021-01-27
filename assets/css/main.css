@@ -882,6 +882,15 @@ After  725-: Remove*/
 @media (max-width: 445px){
 	.book--options a {
 		max-height: 65%;
+		max-width: 80%;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 375px){
+	.book--options a {
+		max-height: 48%;
+		max-width: 75%;
 		justify-content: center;
 	}
 }
@@ -1939,8 +1948,8 @@ After  725-: Remove*/
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	text-align: center;
 	cursor: pointer
 }
