@@ -304,6 +304,12 @@ body {
 	margin: 0 auto
 }
 
+.wrapper {
+	display:block; 
+	width:90%; 
+	margin:auto; 
+}
+
 .l-side-nav {
 	position: absolute;
 	left: 0;
@@ -476,9 +482,7 @@ body {
 }
 
 .header {
-	position: absolute;
-	top: 0;
-	left: 0;
+	position: relative;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -493,7 +497,7 @@ body {
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	z-index: 10
+	z-index: 10;
 }
 
 .header--logo {
@@ -515,6 +519,27 @@ body {
 	font-size: 20px;
 	font-weight: 700;
 }
+
+.subheader--logo {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-decoration: none;
+	color: #fff
+}
+
+
+.subheader--logo p {
+	margin: 0 0 0px 10px;
+	font-size: 20px;
+	font-weight: 700;
+}
+
 
 .header--cta {
 	position: absolute;
@@ -815,10 +840,12 @@ body {
 		max-width: 100%;
 		margin: 0 0 30px 0
 	}
+
 	.intro--options>a:last-child {
 		margin-bottom: 0
 	}
 }
+
 
 @media (max-width: 600px) {
 	.intro--banner {
@@ -829,6 +856,39 @@ body {
 	}
 	.intro--banner img {
 		display: none
+	}
+}
+@media (max-width: 890px) {
+
+	.book--options {
+		display: block
+	}
+	.book--options>a {
+		display: block;
+		max-width: 100%;
+		margin: 30px auto;
+	}
+	.book--options h2 {
+		opacity: 0;
+	}
+	.book--options h3 {
+		opacity: 0;
+	}
+
+/*Resize Books images
+After  725-: Remove*/
+}
+
+@media (max-width: 445px){
+	.book--options a {
+		max-height: 65%;
+		justify-content: center;
+	}
+}
+
+@media (max-height: 725px){
+	.header {
+		margin-bottom: 35px;
 	}
 }
 
@@ -1062,7 +1122,6 @@ body {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	width: 900px;
 	max-width: 75%;
 	height: 100%;
 	-webkit-box-orient: vertical;
@@ -1147,7 +1206,6 @@ body {
 }
 
 .about--options {
-
 	display: -webkit-circle;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -1802,3 +1860,96 @@ body {
 	display: block;
 }
 
+.book--options {
+	justify-content: space-between;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	overflow:auto; 
+	min-height: 725px;
+}
+
+.book--options>a {
+	position:relative;
+	height: 618px;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fff;
+	size: contain;
+	width: 400px;
+}
+
+.book--options>a:nth-child(1) {
+	background: url("../img/fiel.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.book--options>a:nth-child(2) {
+	background-image: url("../img/primetoile.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.book--options>a:nth-child(3) {
+	background-image: url("../img/about-history.jpg")
+}
+
+.book--options>a:hover {
+	opacity: 0.6;
+	cursor:default;
+}
+
+.book--options>a:hover h3 {
+	bottom: -550px;
+}
+.book--options>a:hover h2 {
+	bottom: -515px;
+}
+.book--options>a:hover .middle {
+	opacity: 0.6;
+}
+.book--options>a:hover .middle:hover {
+	opacity: 1;
+}
+
+.book--options h3 {
+	margin-top: 115px;
+	position:relative;
+	bottom: -510px;
+	font-size: 20px;
+	-webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
+	transition: bottom .2s ease-in-out, left .2s ease-in-out
+}
+
+.book--options h2 {
+	margin-top: 35px;
+	position:relative;
+	font-size: 16px;
+	bottom: -475px;
+	opacity: 0.4;
+	-webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
+	transition: bottom .2s ease-in-out, left .2s ease-in-out
+}
+
+.middle {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+	cursor: pointer
+}
+
+.middle p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/* After 445-: Remove a tags
+Resize Books images
+After  725-: Remove*/
