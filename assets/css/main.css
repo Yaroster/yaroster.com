@@ -439,6 +439,15 @@ body {
 	}
 }
 
+@media (max-height: 630px) and (orientation: landscape) {
+	.device-notification {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex
+	}
+}
+
 @media(max-width: 359px) {
 	.device-notification {
 		display: -webkit-box;
@@ -881,25 +890,12 @@ After  725-: Remove*/
 
 @media (max-width: 445px){
 	.book--options a {
-		max-height: 65%;
-		max-width: 80%;
+		max-height: 394px;
+		max-width: 255px;
 		justify-content: center;
 	}
 }
 
-@media (max-width: 375px){
-	.book--options a {
-		max-height: 48%;
-		max-width: 75%;
-		justify-content: center;
-	}
-}
-
-@media (max-height: 725px){
-	.header {
-		margin-bottom: 35px;
-	}
-}
 
 @media (max-width: 600px) and (max-height: 750px) {
 	.intro--banner {
@@ -1890,13 +1886,13 @@ After  725-: Remove*/
 }
 
 .book--options>a:nth-child(1) {
-	background: url("../img/fiel.png");
+	background: url("../img/fiel.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
 .book--options>a:nth-child(2) {
-	background-image: url("../img/primetoile.png");
+	background-image: url("../img/primetoile.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
@@ -1958,7 +1954,3 @@ After  725-: Remove*/
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
-
-/* After 445-: Remove a tags
-Resize Books images
-After  725-: Remove*/
