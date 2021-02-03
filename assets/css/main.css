@@ -1905,17 +1905,17 @@ body {
 		top: 27px;
 		left: -87px;
 	}
+}
+@media (max-width: 925px) {
+	.userview>a:nth-child(4) {
+		display: none;
+	}
 	.searchtag .search {
 		width: 400px;
 		height: 16px;
 	}
 	.searchtag .search img {
 		right: 4%
-	}
-}
-@media (max-width: 925px) {
-	.userview>a:nth-child(4) {
-		display: none;
 	}
 }
 @media (max-width: 705px) {
@@ -1937,6 +1937,14 @@ body {
 		max-width: 157px;
 		top: 26px;
 		left: -78px;
+	}
+	.titletag h2 {
+		font-size: 24px;
+	}
+	.titletag img {
+		max-width: 118px;
+		top: 26px;
+		left: 63px;
 	}
 	.searchtag .search {
 		max-width: 300px;
