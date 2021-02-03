@@ -1951,7 +1951,9 @@ body {
 		height: 12px;
 	}
 	.searchtag .search input {
-		opacity: 0;
+		top: 17px;
+		font-size: 12px;
+		line-height: 12px;
 	}
 	.searchtag .search img {
 		right: 5%;
