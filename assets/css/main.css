@@ -1767,6 +1767,8 @@ body {
 	z-index: -1
 }
 
+
+
 .subtitletag {
 	margin-top: 13px;
 	vertical-align: top;
@@ -1813,10 +1815,9 @@ body {
 	justify-content: space-between;
 	padding: 0;
 	list-style: none;
-	top:40%;
+	top:50%;
 	margin-top: 150px;
 }
-
 .userview>a h1 {
 	min-width: 200px;
 	position: relative;
@@ -1925,6 +1926,7 @@ body {
 		top: 27px;
 		left: -87px;
 	}
+
 }
 @media (max-width: 925px) {
 	.userview>a:nth-child(4) {
@@ -1978,7 +1980,11 @@ body {
 		right: 5%;
 	}
 }
-
+@media (max-height: 1235px) {
+	.userview {
+		top: 40%;
+	}
+}
 .note {
   font-size: 0.375em;
   font-weight: bold;
