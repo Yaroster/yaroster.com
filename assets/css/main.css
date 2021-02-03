@@ -1816,6 +1816,7 @@ body {
 	top:40%;
 	margin-top: 150px;
 }
+
 .userview>a h1 {
 	min-width: 200px;
 	position: relative;
@@ -1866,6 +1867,7 @@ body {
 	margin-right: 12px;
 }
 .userview>a:hover {
+	transition: opacity .4s ease-in-out, visibility 0s .4s;
 	opacity: 1;
 }
 .userview>a:nth-child(1) {
@@ -1975,4 +1977,12 @@ body {
 	.searchtag .search img {
 		right: 5%;
 	}
+}
+
+.note {
+  font-size: 0.375em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
 }
