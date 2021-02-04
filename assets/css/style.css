@@ -18,19 +18,18 @@ em {
   min-width: 157px;
   position: relative;
   border-radius: 9px;
-  left: 90px;
+  left: 95px;
   top: 14px;
   padding: 0 20px;
   margin: 10px;
   margin-bottom: 12px;
   display: inline-block;
-
+  opacity: 1;
   transition: all 0.3s ease-in-out;
-  cursor: default;
 }
 .con-tooltip.bottom {
   width: 150px;
-  left: -100px;
+  left: -57px;
 }
 .con-tooltip.bottom .tooltip {
     width: 150px;
@@ -103,6 +102,9 @@ em {
   .con-tooltip {
 		left: 64px;
 	}
+  .con-tooltip.bottom {
+    top: -2px;
+  }
 }
 @media (max-width: 448px) {
   .con-tooltip {
