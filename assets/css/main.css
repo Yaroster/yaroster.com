@@ -1866,11 +1866,13 @@ body {
 	color: #fff;
 	opacity: 0.55;
 	margin-right: 12px;
+	transition: opacity .4s ease-in-out, visibility 0s .4s;
 }
 .userview>a:hover {
 	transition: opacity .4s ease-in-out, visibility 0s .4s;
 	opacity: 1;
 }
+
 .userview>a:nth-child(1) {
 	background: url("../img/user_1.png");
 	background-size: contain;
@@ -1927,7 +1929,6 @@ body {
 		left: -87px;
 	}
 
-}
 @media (max-width: 925px) {
 	.userview>a:nth-child(4) {
 		display: none;
@@ -1951,7 +1952,7 @@ body {
 	display: none;
 	}
 }
-@media (max-width: 420px) {
+@media (max-width: 448px) {
 	.subtitletag h2 {
 		font-size: 24px;
 	}
@@ -1984,11 +1985,4 @@ body {
 	.userview {
 		top: 40%;
 	}
-}
-.note {
-  font-size: 0.375em;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  letter-spacing: 1px;
 }

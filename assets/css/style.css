@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Arapey|Cantarell|Comfortaa|Khand|Russo+One|Ubuntu');
+
+@keyframes odsoky {
+  0%{
+    transform: translateY(6px);
+  }
+
+  100%{
+    transform: translateY(1px);
+  }
+
+}
+em {
+	color: lighten( $color-black, 40% );
+	font-style: italic;
+}
 .con-tooltip {
   min-height:  92px;
   min-width: 157px;
@@ -13,6 +27,15 @@
 
   transition: all 0.3s ease-in-out;
   cursor: default;
+}
+.con-tooltip.bottom {
+  width: 150px;
+  left: -100px;
+}
+.con-tooltip.bottom .tooltip {
+    width: 150px;
+    top: 72px;
+    z-index: 8;
 }
 .tooltip {
 
@@ -50,8 +73,8 @@
 
   position: absolute;
   left: 40%;
-
 }
+
 .con-tooltip:hover .tooltip{
   visibility: visible;
   transform: translateY(-10px);
@@ -59,38 +82,29 @@
     transition: .3s linear;
   animation: odsoky 1s ease-in-out infinite  alternate;
 }
-@keyframes odsoky {
-  0%{
-    transform: translateY(6px);
-  }
-
-  100%{
-    transform: translateY(1px);
-  }
-
-}
 .top:hover {transform: translateY(-6px);  }
 }
-em {
-	color: lighten( $color-black, 40% );
-	font-style: italic;
-}
-/*bottom*/
 .bottom .tooltip { top:115%; left:-20%; }
 .bottom .tooltip::after{
-  top:-17%;
+  top:-12%;
   left:40%;
   transform: rotate(180deg);
 }
+.note {
+  font-size: 0.375em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+}
 
-
-
+@import url('https://fonts.googleapis.com/css?family=Arapey|Cantarell|Comfortaa|Khand|Russo+One|Ubuntu');
 @media (max-width: 1152px) {
   .con-tooltip {
-    left: 62px;
-  }
+		left: 64px;
+	}
 }
-@media (max-width: 420px) {
+@media (max-width: 448px) {
   .con-tooltip {
     left: 0px;
   }
