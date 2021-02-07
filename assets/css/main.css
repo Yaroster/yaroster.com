@@ -1776,6 +1776,7 @@ body {
 	left: 50%;
 	top: 50%;
 	opacity: 0.75;
+	z-index: 2;
 }
 .subtitletag h2 {
 	right: 50%;
@@ -1819,28 +1820,6 @@ body {
   width: 100%;
 
 }
-
-@media screen and (max-height: 1090px) {
-	.userview {
-		top:38%
-	}
-}
-@media screen and (max-height: 858px) and (min-width: 705px)  {
-	.titletag {
-		top: 9%;
-	}
-	.searchtag .search {
-		top: 20%;
-	}
-	.subtitletag {
-		top: 32%;
-	}
-	.userview {
-		margin-top: 40px;
-	}
-}
-
-
 .userview>a h1 {
 	min-width: 200px;
 	position: relative;
@@ -1877,6 +1856,12 @@ body {
   text-align: right;
 	color: #FFFFFF;
 	text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.4);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .userview>a {
 	position: relative;
@@ -1896,7 +1881,6 @@ body {
 	transition: opacity .4s ease-in-out, visibility 0s .4s;
 	opacity: 1;
 }
-
 .userview>a:nth-child(1) {
 	background: url("../img/user_1.png");
 	background-size: contain;
@@ -2005,5 +1989,24 @@ body {
 	}
 	.searchtag .search img {
 		right: 5%;
+	}
+}
+@media screen and (max-height: 1090px) {
+	.userview {
+		top:38%
+	}
+}
+@media screen and (max-height: 858px) and (min-width: 705px)  {
+	.titletag {
+		top: 9%;
+	}
+	.searchtag .search {
+		top: 20%;
+	}
+	.subtitletag {
+		top: 32%;
+	}
+	.userview {
+		margin-top: 40px;
 	}
 }
