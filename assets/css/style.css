@@ -29,13 +29,12 @@ em {
 }
 .con-tooltip.bottom {
   width: 150px;
-  left: -57px;
+  left: -66px;
+  opacity: 1
 }
-.con-tooltip.bottom .tooltip {
-    width: 150px;
-    top: 72px;
-    z-index: 8;
-}
+.con-tooltip.bottom .tooltip {width: 150px;top: 72px;z-index: 8;}
+
+
 .tooltip {
 
   visibility: hidden;
@@ -81,9 +80,12 @@ em {
     transition: .3s linear;
   animation: odsoky 1s ease-in-out infinite  alternate;
 }
-.top:hover {transform: translateY(-6px);  }
+.top:hover {
+  transform: translateY(-6px);  z-index: -1
 }
-.bottom .tooltip { top:115%; left:-20%; }
+.bottom .tooltip {
+  top:115%; left:-20%;
+}
 .bottom .tooltip::after{
   top:-12%;
   left:40%;
