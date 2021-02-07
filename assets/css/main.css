@@ -1775,7 +1775,7 @@ body {
 	height: 37px;
 	left: 50%;
 	top: 50%;
-	opacity: 0.75;
+	color: rgb(255, 255, 255, 0.7);
 	z-index: 2;
 }
 .subtitletag h2 {
@@ -1802,6 +1802,10 @@ body {
 	left: -107px;
 	z-index: -1
 }
+.subtitletag .tooltip{
+	opacity: 1;
+}
+
 
 .userview {
 	position: relative;
