@@ -38,6 +38,12 @@
 	font-style: normal
 }
 
+@font-face {
+	font-family: 'Font-Awesome';
+	src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css");
+	font-size: 22px;
+}
+
 @keyframes transitionIn {
 
 	from {

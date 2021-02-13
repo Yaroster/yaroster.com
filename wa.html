@@ -29,10 +29,6 @@
   <div id="viewport" class="l-viewport">
     <div class="l-wrapper">
       <div class="header"><a class="header--logo"><img src="https://raw.githubusercontent.com/Yaroster/yaro/main/Logo_weebanalyser_Blank.svg" width="35" height="35"><p>weebanalyser</p></a></div>
-      <div class="searchtag"><div class="search">
-            <input type="text" placeholder="MAL, Kitsu, AniList or Animeplanet username...">
-            <img src="assets/img/search_icon.svg"></img>
-          </div></div>
       <div class="titletag">
           <h2>Discover your level of weebness</h2>
           <img src="assets/img/rectangle.svg">
@@ -42,19 +38,23 @@
           <p>weebness /wiːbnəs/:</p>
     			<p><em>One's legitimacy to be called a weeaboo.</em></p>
         </div></div></img>
-
+        <div id="search">
+          <input id="input" placeholder="MAL, Kitsu, AniList or Animeplanet username...  "/>
+          <button id="button"><i class="fa fa-search" style="font-size: 22px;"></i></button>
+          <div class="spinner"><i class="fa fa-spinner" style="font-size: 22px;"></i></div>
+        </div>
         </div>
         <div class="subtitletag">
             <h2>Recent weebanalyser results</h2>
             <img src="assets/img/rectangle_2.svg">
             <div class="con-tooltip bottom">
-              <div class="tooltip ">
+              <div class="tooltip">
                 <p><em>Don't take these results too seriously, it's just a fun little appー( ´ ▽ ` )ﾉ></em></p>
               </div>
             </div>
           </img>
         </div>
-      <div class="userview">
+        <div class="userview">
               <a>
               <h1>Smart_Monkey</h1>
               <h2>Lazy Classic Ronin</h2>
@@ -85,7 +85,7 @@
                 <h2>Abandoning Classic Otaku</h2>
                 <h3>1d</h3>
               </a>
-              </div>
+      </div>
     </div>
 </div>
 <script src="assets/js/animation_functions.js"></script>
