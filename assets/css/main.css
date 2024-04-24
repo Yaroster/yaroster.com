@@ -815,7 +815,8 @@ body {
 .intro--banner img {
 	position: absolute;
 	bottom: 21px;
-	right: -12px
+	right: -12px;
+	margin-bottom: 2%;
 }
 
 .intro--options {
@@ -861,7 +862,8 @@ body {
 		font-size: 55px
 	}
 	.intro--banner img {
-		width: 430px
+		width: 430px;
+		margin-bottom: 2%;
 	}
 	.intro--options>a {
 		margin-right: 30px
@@ -879,7 +881,8 @@ body {
 		font-size: 44px
 	}
 	.intro--banner img {
-		width: 330px
+		width: 330px;
+		margin-bottom: 2%;
 	}
 	.intro--options {
 		display: block
@@ -904,7 +907,8 @@ body {
 		font-size: 55px
 	}
 	.intro--banner img {
-		display: none
+		display: none;
+		margin-bottom: 2%;
 	}
 }
 @media (max-width: 890px) {
@@ -1244,7 +1248,7 @@ body {
 .about--banner img {
 	position: absolute;
 	bottom: -90px;
-	right: -12px
+	right: -12px;
 }
 
 .about--options {
