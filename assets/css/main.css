@@ -83,7 +83,15 @@ section,
 summary {
 	display: block
 }
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
 
+#logo-animation img {
+	width: 20%; /* Adjust based on your preference */
+	animation: fadeIn 1s ease-out;
+}
 audio,
 canvas,
 progress,
@@ -1279,7 +1287,7 @@ body {
 	background-image: url("../img/ig.png")
 }
 .about--options>a:nth-child(4) {
-	background-image: url("../img/tumblr.png")
+	background-image: url("../img/steepster.png")
 }
 .about--options>a:hover h3 {
 	bottom: -50px
