@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)https://cswsr6.csb.app/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script crossorigin="" type="text/javascript" src="./React App_files/vendors~app~embed~sandbox-startup.1c90fe343.chunk.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/default~app~embed~sandbox~sandbox-startup.e509d996f.chunk.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/sandbox-startup.2a2c6a199.js.download"></script><link href="https://codesandbox.io/static/js/babel.7.21.8.min.js" rel="prefetch" as="script">
+
+<script src="./React App_files/browserfs.min.js.download" type="text/javascript"></script>
+
+<script>
+  window.process = BrowserFS.BFSRequire('process');
+  window.Buffer = BrowserFS.BFSRequire('buffer').Buffer;
+</script>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="https://cswsr6.csb.app/manifest.json">
+  <link rel="shortcut icon" href="https://cswsr6.csb.app/favicon.ico">
+  <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>React App</title>
+  <link rel="stylesheet" href="./React App_files/css2">
+  <link rel="manifest" href="https://cswsr6.csb.app/manifest.json">
+  <script charset="utf-8" src="./React App_files/vendors~css-modules-loader-core.efb093adc.chunk.js.download"></script><script charset="utf-8" src="./React App_files/css-modules-loader-core.b2216127d.chunk.js.download"></script><style id="/src/App.module.css:-css" type="text/css">._src_App_module__root {
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #e5e5e5;
+  flex-basis: 100%;
+  overflow-y: auto;
+}
+</style><style id="/src/components/_resets.module.css:-css" type="text/css">._src_components_resets_module__clapyResets,
+._src_components_resets_module__clapyResets * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+._src_components_resets_module__clapyResets,
+._src_components_resets_module__clapyResets :not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+._src_components_resets_module__clapyResets ul,
+._src_components_resets_module__clapyResets ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+._src_components_resets_module__clapyResets p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+._src_components_resets_module__clapyResets img {
+  object-fit: contain;
+}
+
+._src_components_resets_module__clapyResets svg {
+  overflow: visible;
+}
+</style><style id="/src/components/LaunchPage/LaunchPage.module.css:-css" type="text/css">._src_components_LaunchPage_LaunchPage_module__root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #0f0f10;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+._src_components_LaunchPage_LaunchPage_module__rectangle21 {
+  position: absolute;
+  left: 12.9688%;
+  right: 14.1146%;
+  bottom: 0;
+  height: 69px;
+  border-radius: 16px 16px 0 0;
+  background-color: #ffffff26;
+  backdrop-filter: blur(35px);
+}
+._src_components_LaunchPage_LaunchPage_module__vector {
+  position: absolute;
+  left: 14.5833%;
+  right: 84.6875%;
+  bottom: 17.0333px;
+  height: 32.9667px;
+  overflow: visible;
+}
+._src_components_LaunchPage_LaunchPage_module__icon {
+  width: 100%;
+  height: 100%;
+}
+._src_components_LaunchPage_LaunchPage_module__vector2 {
+  position: absolute;
+  left: 83.6979%;
+  right: 15.5729%;
+  bottom: 17.0333px;
+  height: 32.9667px;
+  overflow: visible;
+}
+._src_components_LaunchPage_LaunchPage_module__icon2 {
+  width: 100%;
+  height: 100%;
+}
+._src_components_LaunchPage_LaunchPage_module__otherProjectsInDevelopment {
+  opacity: 0.5;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+  font-family: SF Pro Display, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 44.7396%;
+  right: 41.4063%;
+  bottom: 24px;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+._src_components_LaunchPage_LaunchPage_module__rectangle212 {
+  position: absolute;
+  left: 1339px;
+  top: 314px;
+  width: 570px;
+  height: 400px;
+  border-radius: 16px 0 0 16px;
+  background-color: #ffffff26;
+  backdrop-filter: blur(35px);
+}
+._src_components_LaunchPage_LaunchPage_module__download1 {
+  position: absolute;
+  left: 1480px;
+  top: 314px;
+  width: 640px;
+  height: 400px;
+  background-image:/* webpackIgnore: true */ url('assets/download1.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-mask-image:/* webpackIgnore: true */ url('assets/maskGroup2.svg');
+  mask-image:/* webpackIgnore: true */ url('assets/maskGroup2.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 170px 0px;
+  mask-position: 170px 0px;
+  -webkit-mask-size: 300px 400px;
+  mask-size: 300px 400px;
+}
+._src_components_LaunchPage_LaunchPage_module__learnMore {
+  opacity: 0.5;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+  font-family: SF Pro Display, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 1375px;
+  top: 362px;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+._src_components_LaunchPage_LaunchPage_module__vStudyHowTechCanHelpToFreeEduc {
+  position: absolute;
+  left: 1375px;
+  top: 418px;
+  width: 246px;
+  height: min-content;
+  flex-direction: column;
+}
+._src_components_LaunchPage_LaunchPage_module__textBlock {
+  color: #fff;
+  font-size: 36px;
+  line-height: 135%;
+  font-weight: bold;
+  font-family: SF Pro Text, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+._src_components_LaunchPage_LaunchPage_module__textBlock2 {
+  margin-top: 0;
+}
+._src_components_LaunchPage_LaunchPage_module__labelWrapper {
+  font-size: 36px;
+  font-family: SF Pro Display, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+._src_components_LaunchPage_LaunchPage_module__label {
+  color: #fff;
+  font-size: 36px;
+  line-height: 135%;
+  font-weight: 600;
+  font-family: SF Pro Display, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+._src_components_LaunchPage_LaunchPage_module__vector3 {
+  position: absolute;
+  left: 71.6146%;
+  right: 26.1458%;
+  top: 60.3704%;
+  bottom: 38.3333%;
+  overflow: visible;
+}
+._src_components_LaunchPage_LaunchPage_module__icon3 {
+  width: 100%;
+  height: 100%;
+}
+._src_components_LaunchPage_LaunchPage_module__vStudy {
+  color: #fff;
+  font-size: 96px;
+  line-height: 110%;
+  font-weight: 900;
+  font-family: SF Pro Display, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  letter-spacing: 0.01em;
+  position: absolute;
+  left: 221px;
+  top: 376px;
+  width: 860px;
+  height: min-content;
+  flex-direction: column;
+}
+._src_components_LaunchPage_LaunchPage_module__anOpenSourceCommunityBasedStud {
+  opacity: 0.8;
+  position: absolute;
+  left: 221px;
+  top: 485px;
+  width: 649px;
+  height: min-content;
+  flex-direction: column;
+}
+._src_components_LaunchPage_LaunchPage_module__textBlock3 {
+  color: #fff;
+  font-size: 28px;
+  line-height: 150%;
+  font-family: SF Pro Text, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+._src_components_LaunchPage_LaunchPage_module__textBlock4 {
+  margin-top: 0;
+}
+._src_components_LaunchPage_LaunchPage_module__labelWrapper2 {
+  font-size: 28px;
+  font-family: SF Pro Display, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+._src_components_LaunchPage_LaunchPage_module__label2 {
+  color: #fff;
+  font-size: 28px;
+  line-height: 150%;
+  font-weight: 100;
+  font-family: SF Pro Display, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+._src_components_LaunchPage_LaunchPage_module__bottom_Bar {
+  opacity: 0.4;
+  transform-origin: top left;
+  position: absolute;
+  left: 219px;
+  top: 105px;
+  width: 1440px;
+  max-width: 100%;
+  height: 1px;
+  max-height: 100%;
+  background-color: #e7e7f2;
+  backdrop-filter: blur(30px);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+._src_components_LaunchPage_LaunchPage_module__yaroster {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: SF Pro Display, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  letter-spacing: 0.01em;
+  position: absolute;
+  left: 841px;
+  top: 47px;
+  width: 271px;
+  height: min-content;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+._src_components_LaunchPage_LaunchPage_module__about_Button {
+  position: absolute;
+  left: 1599px;
+  top: 40px;
+  width: min-content;
+  height: min-content;
+  padding: 10px;
+}
+._src_components_LaunchPage_LaunchPage_module__about {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: SF Pro Text, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+._src_components_LaunchPage_LaunchPage_module__left_Bar {
+  position: absolute;
+  left: 221px;
+  top: 37px;
+  width: 223.4395px;
+  height: 50px;
+  overflow: visible;
+}
+._src_components_LaunchPage_LaunchPage_module__icon4 {
+  width: 100%;
+  height: 100%;
+}
+</style><style id="/src/resets.css:-css" type="text/css">html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-basis: 100%;
+  width: 100%;
+}
+
+#root {
+  position: relative;
+}
+
+body button:not(:disabled) {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body label {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+</style><script charset="utf-8" src="./React App_files/0.f62fbfd4b.chunk.js.download"></script><script charset="utf-8" src="./React App_files/1.390d5cd6d.chunk.js.download"></script><script charset="utf-8" src="./React App_files/2.77529c16f.chunk.js.download"></script><script charset="utf-8" src="./React App_files/7.14bd680f6.chunk.js.download"></script></head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"><div class="_src_components_resets_module__clapyResets _src_App_module__root"><div class="_src_components_resets_module__clapyResets _src_components_LaunchPage_LaunchPage_module__root"><div class="_src_components_LaunchPage_LaunchPage_module__rectangle21"></div><div class="_src_components_LaunchPage_LaunchPage_module__vector"><svg preserveAspectRatio="none" viewBox="0 0 14 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="_src_components_LaunchPage_LaunchPage_module__icon"><path opacity="0.5" d="M5.83333 25.6407L5.83333 0L8.16667 0L8.16667 25.6407H14L7 32.9667L4.76837e-07 25.6407H5.83333Z" fill="white"></path></svg></div><div class="_src_components_LaunchPage_LaunchPage_module__vector2"><svg preserveAspectRatio="none" viewBox="0 0 14 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="_src_components_LaunchPage_LaunchPage_module__icon2"><path opacity="0.5" d="M5.83333 25.6407L5.83333 0L8.16667 0L8.16667 25.6407H14L7 32.9667L4.76837e-07 25.6407H5.83333Z" fill="white"></path></svg></div><div class="_src_components_LaunchPage_LaunchPage_module__otherProjectsInDevelopment">Other projects in development</div><div class="_src_components_LaunchPage_LaunchPage_module__rectangle212"></div><div class="_src_components_LaunchPage_LaunchPage_module__download1"></div><div class="_src_components_LaunchPage_LaunchPage_module__learnMore">Learn More</div><div class="_src_components_LaunchPage_LaunchPage_module__vStudyHowTechCanHelpToFreeEduc"><div class="_src_components_LaunchPage_LaunchPage_module__textBlock">vStudy:</div><div class="_src_components_LaunchPage_LaunchPage_module__textBlock2"><p class="_src_components_LaunchPage_LaunchPage_module__labelWrapper"><span class="_src_components_LaunchPage_LaunchPage_module__label">How tech can help to free education</span></p></div></div><div class="_src_components_LaunchPage_LaunchPage_module__vector3"><svg preserveAspectRatio="none" viewBox="0 0 43 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="_src_components_LaunchPage_LaunchPage_module__icon3"><path opacity="0.5" d="M33.4444 8.16667H0V5.83333H33.4444V0L43 7L33.4444 14V8.16667Z" fill="white"></path></svg></div><div class="_src_components_LaunchPage_LaunchPage_module__vStudy">vStudy</div><div class="_src_components_LaunchPage_LaunchPage_module__anOpenSourceCommunityBasedStud"><div class="_src_components_LaunchPage_LaunchPage_module__textBlock3">An open-source community-based studying app.</div><div class="_src_components_LaunchPage_LaunchPage_module__textBlock4"><p class="_src_components_LaunchPage_LaunchPage_module__labelWrapper2"><span class="_src_components_LaunchPage_LaunchPage_module__label2">(Currently indev)</span></p></div></div><div class="_src_components_LaunchPage_LaunchPage_module__bottom_Bar"></div><div class="_src_components_LaunchPage_LaunchPage_module__yaroster">Yaroster.</div><div class="_src_components_LaunchPage_LaunchPage_module__about_Button"><div class="_src_components_LaunchPage_LaunchPage_module__about">About</div></div><div class="_src_components_LaunchPage_LaunchPage_module__left_Bar"><svg preserveAspectRatio="none" viewBox="0 0 224 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="_src_components_LaunchPage_LaunchPage_module__icon4"><path d="M4.59249 40.5665C2.11743 40.5665 0.11097 42.6221 0.11097 45.1577C0.11097 47.6932 2.11743 49.7488 4.59249 49.7488H27.3192C29.7944 49.7488 31.8008 47.6932 31.8008 45.1577C31.8008 42.6221 29.7944 40.5665 27.3192 40.5665H4.59249Z" fill="#E9E9E9" fill-opacity="0.5"></path><path d="M8.96304 45.1576C8.96304 47.6932 6.95658 49.7486 4.48152 49.7486C2.00646 49.7486 0 47.6932 0 45.1576V4.59112C0 2.05556 2.00646 7.50655e-05 4.48152 7.50655e-05C6.95658 7.50655e-05 8.96304 2.05556 8.96304 4.59112V45.1576Z" fill="white" fill-opacity="0.5"></path><path d="M40.4725 9.18229C42.9476 9.18229 44.954 7.12666 44.954 4.59108C44.954 2.0555 42.9476 -8.85747e-06 40.4725 -8.85747e-06H17.7457C15.2706 -8.85747e-06 13.2642 2.0555 13.2642 4.59108C13.2642 7.12666 15.2706 9.18229 17.7457 9.18229H40.4725Z" fill="#E9E9E9" fill-opacity="0.5"></path><path d="M36.102 4.59104C36.102 2.05548 38.1084 -8.85747e-06 40.5835 -8.85747e-06C43.0586 -8.85747e-06 45.065 2.05548 45.065 4.59104V45.1575C45.065 47.6931 43.0586 49.7486 40.5835 49.7486C38.1084 49.7486 36.102 47.6931 36.102 45.1575V4.59104Z" fill="white" fill-opacity="0.5"></path><path d="M26.5349 32.8483H26.535C27.3787 32.4638 27.7261 31.4668 27.311 30.6217L20.981 17.7339C20.5658 16.8888 19.5454 16.5155 18.7016 16.9C17.8578 17.2847 17.5103 18.2817 17.9254 19.1268L24.2555 32.0145C24.6706 32.8596 25.6912 33.233 26.5349 32.8483Z" fill="white" fill-opacity="0.25"></path><path d="M30.1748 26.5114C31.0576 26.5114 31.7731 25.7783 31.7731 24.874C31.7731 23.9698 31.0576 23.2368 30.1748 23.2368H15.0566C14.174 23.2368 13.4585 23.9698 13.4585 24.874C13.4585 25.7783 14.174 26.5114 15.0566 26.5114H30.1748Z" fill="#E5E5E5" fill-opacity="0.5"></path><path d="M18.7016 32.8483C17.8578 32.4638 17.5103 31.4668 17.9254 30.6217L24.2555 17.7339C24.6706 16.8888 25.6912 16.5155 26.5349 16.9C27.3787 17.2847 27.7261 18.2817 27.311 19.1268L20.981 32.0145C20.5658 32.8596 19.5453 33.233 18.7016 32.8483Z" fill="white" fill-opacity="0.5"></path><path d="M60.7561 15.5466C64.2225 15.5466 67.0326 12.7624 67.0326 9.32797C67.0326 5.89352 64.2225 3.10935 60.7561 3.10935C57.2898 3.10935 54.4797 5.89352 54.4797 9.32797C54.4797 12.7624 57.2898 15.5466 60.7561 15.5466Z" fill="#C4C4C4" fill-opacity="0.5"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M62.8483 3.46319C60.4106 4.31688 58.6639 6.62039 58.6639 9.32797C58.6639 12.0356 60.4106 14.3391 62.8483 15.1928C62.194 15.4219 61.4897 15.5466 60.7561 15.5466C57.2898 15.5466 54.4797 12.7624 54.4797 9.32797C54.4797 5.89355 57.2898 3.10935 60.7561 3.10935C61.4897 3.10935 62.194 3.2341 62.8483 3.46319Z" fill="white" fill-opacity="0.5"></path><path d="M60.7561 34.2022C57.2897 34.2022 54.4797 36.9863 54.4797 40.4208C54.4797 43.8552 57.2897 46.6394 60.7561 46.6394C64.2225 46.6394 67.0326 43.8552 67.0326 40.4208C67.0326 36.9863 64.2225 34.2022 60.7561 34.2022Z" fill="#C4C4C4" fill-opacity="0.5"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M58.664 46.2857C61.1018 45.432 62.8484 43.1285 62.8484 40.4209C62.8484 37.7133 61.1018 35.4098 58.664 34.5561C59.3184 34.327 60.0226 34.2022 60.7562 34.2022C64.2226 34.2022 67.0326 36.9864 67.0326 40.4209C67.0326 43.8553 64.2226 46.6395 60.7562 46.6395C60.0226 46.6395 59.3184 46.5147 58.664 46.2857Z" fill="white" fill-opacity="0.5"></path><path d="M119.608 12.4947H94.8831C92.3665 12.4947 90.3264 14.516 90.3264 17.0094C90.3264 19.5028 92.3665 21.5242 94.8831 21.5242H119.608C122.125 21.5242 124.165 19.5028 124.165 17.0094C124.165 14.516 122.125 12.4947 119.608 12.4947Z" fill="#E5E5E5" fill-opacity="0.5"></path><path d="M121.132 4.44642C122.285 2.13279 125.141 1.12144 127.512 2.18749C129.883 3.25355 130.872 5.99331 129.719 8.30694L111.121 45.6524C109.969 47.966 107.112 48.9773 104.741 47.9113C102.37 46.8452 101.382 44.1055 102.534 41.7918L121.132 4.44642Z" fill="#C4C4C4" fill-opacity="0.5"></path><path d="M92.259 4.4401C91.1093 2.12528 88.2558 1.11485 85.8856 2.18325C83.5154 3.25165 82.5261 5.99428 83.6758 8.3091L102.234 45.6731C103.384 47.9879 106.238 48.9983 108.608 47.9299C110.978 46.8615 111.967 44.1189 110.818 41.8041L92.259 4.4401Z" fill="white" fill-opacity="0.5"></path><path d="M161.791 45.7774C162.904 48.1093 165.715 49.1053 168.069 48.0019C170.422 46.8985 171.427 44.1136 170.314 41.7816L152.496 4.47341C151.383 2.14148 148.572 1.14555 146.218 2.24895C143.865 3.35235 142.86 6.13723 143.973 8.46917L161.791 45.7774Z" fill="#E5E5E5" fill-opacity="0.5"></path><path d="M134.689 45.7775C133.575 48.1095 130.764 49.1055 128.41 48.002C126.057 46.8985 125.051 44.1135 126.165 41.7814L143.983 4.47138C145.097 2.13933 147.908 1.14337 150.262 2.24684C152.616 3.35031 153.621 6.13534 152.507 8.46739L134.689 45.7775Z" fill="white" fill-opacity="0.5"></path><path d="M202.549 45.5263C203.662 47.8583 206.473 48.8542 208.827 47.7508C211.18 46.6474 212.186 43.8625 211.072 41.5306L193.255 4.22235C192.141 1.89042 189.33 0.894487 186.976 1.99788C184.623 3.10128 183.618 5.88617 184.731 8.21811L202.549 45.5263Z" fill="white" fill-opacity="0.25"></path><path d="M218.725 29.5311C221.329 29.5311 223.439 27.4397 223.439 24.8599C223.439 22.2801 221.329 20.1887 218.725 20.1887L177.067 20.1887C174.463 20.1887 172.352 22.2801 172.352 24.8599C172.352 27.4397 174.463 29.5311 177.067 29.5311L218.725 29.5311Z" fill="#E5E5E5" fill-opacity="0.5"></path><path d="M193.255 45.5264C192.141 47.8583 189.331 48.8542 186.977 47.7508C184.623 46.6474 183.618 43.8625 184.732 41.5306L202.549 4.22247C203.663 1.89054 206.474 0.894622 208.827 1.99803C211.181 3.10144 212.186 5.88634 211.073 8.21827L193.255 45.5264Z" fill="white" fill-opacity="0.5"></path></svg></div></div></div></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script crossorigin="" type="text/javascript" src="./React App_files/vendors~app~codemirror-editor~monaco-editor~sandbox.a0a9d9986.chunk.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/common-sandbox.09f563264.chunk.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/vendors~app~sandbox.d07ab9245.chunk.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/vendors~sandbox.cb6b5ecc4.chunk.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/default~app~embed~sandbox.425d82508.chunk.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/sandbox.781f63989.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/banner.d9cb10a38.js.download"></script>
+    <script crossorigin="" type="text/javascript" src="./React App_files/watermark-button.eeb14a97b.js.download"></script>
+  
+
+<iframe id="sb__open-sandbox54" style="
+      position: fixed;
+      margin: 0;
+      padding: 0;
+      bottom: 16px;
+      right: 16px;
+      border: none;
+      width: 118px;
+      height: 36px;
+      z-index: 9999999999999;
+    " src="./React App_files/saved_resource.html"></iframe></body></html>
