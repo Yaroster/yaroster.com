@@ -1,196 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Yaroster</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/Yaroster/yaro/main/Logo_Yaroster.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Yaroster: Aspiring Software Engineer">
-  <meta name="keywords" content="yaroster, dev">
-  <meta name="author" content="Yaroster">
-  <link rel="stylesheet" href="assets/css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaroster</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .background2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(.42,1.03,.7,-0.36);
+        }
+        .background2 {
+            opacity: 1; /* Initially visible */
+        }
+        #svg-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            overflow: visible;
+        }
+        #logo {
+            cursor: pointer;
+            width: 30vw;
+            transform-origin: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        #logo:hover {
+            transform: scale(1.1) rotate(360deg);
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        #main-content {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
-
-<div id="logo-animation">
-  <img id="part1" src="/assets/img/intro_animation/1.svg" alt="Logo Part 1" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: block;">
-  <img id="part2" src="/assets/img/intro_animation/2.svg" alt="Logo Part 2" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;">
-  <img id="part3" src="/assets/img/intro_animation/3.svg" alt="Logo Part 3" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;">
+<div class="background2">
+    <svg width="5610" height="3353" viewBox="0 0 5610 3353" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 -0.000166825L0 3353H5610V3252.56V3227.42V3191.76V3146.31V3114.57V3103.58V3043.96V3031.81V3002.43V2984V2953.4V2915.35V2819.77V2797.84V2719.67V2699.85V2652.69V2565.06V2538.49V2513.82V2484.17V2442.59V2377.81V2364.58V2283V2254.94V2135.36V2005.96V1949.34V1807.93V1764.91V1711.92V1678.17V1644.41V1591.43V1548.41V1406.99V1350.38V1220.97V1101.38V1073.36V991.741V978.539V913.762V872.143V842.495V817.827V791.256V703.656V656.499V636.64V558.494V536.566V440.966V402.928V372.329V353.925V324.501V312.363V252.732V241.768V210.051V164.572V128.939V103.767V-0.000166825H0Z" fill="url(#paint0_radial_2_4)"/>
+        <defs>
+            <radialGradient id="paint0_radial_2_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(5326.51 387.711) rotate(-106.384) scale(6315.24 5459.16)">
+                <stop stop-color="#5F5E63"/>
+                <stop offset="0.801983"/>
+                <stop offset="0.953125"/>
+                <stop offset="1"/>
+            </radialGradient>
+        </defs>
+    </svg>
+</div>
+<div id="svg-container">
+    <svg id="logo" width="1751" height="1721" viewBox="0 0 1751 1721" fill="none" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <path id="branch3" d="M424.069 284.124C385.923 203.498 420.36 107.215 500.985 69.0693C581.611 30.9234 677.894 65.3598 716.04 145.985L1326.33 1435.9C1364.48 1516.52 1330.04 1612.81 1249.41 1650.95C1168.79 1689.1 1072.51 1654.66 1034.36 1574.04L424.069 284.124Z" fill="url(#paint0_radial_5_20)"/>
+        <path id="branch3" d="M424.069 284.124C385.923 203.498 420.36 107.215 500.985 69.0693C581.611 30.9234 677.894 65.3598 716.04 145.985L1326.33 1435.9C1364.48 1516.52 1330.04 1612.81 1249.41 1650.95C1168.79 1689.1 1072.51 1654.66 1034.36 1574.04L424.069 284.124Z" fill="url(#paint1_angular_5_20)" fill-opacity="0.2"/>
+        <path id="branch1" d="M161.699 1021.51C72.5055 1021.51 0.199463 949.205 0.199463 860.011C0.199463 770.817 72.5055 698.511 161.699 698.511H1588.7C1677.89 698.511 1750.2 770.817 1750.2 860.011C1750.2 949.205 1677.89 1021.51 1588.7 1021.51H161.699Z" fill="url(#paint2_radial_5_20)"/>
+        <path id="branch1" d="M161.699 1021.51C72.5055 1021.51 0.199463 949.205 0.199463 860.011C0.199463 770.817 72.5055 698.511 161.699 698.511H1588.7C1677.89 698.511 1750.2 770.817 1750.2 860.011C1750.2 949.205 1677.89 1021.51 1588.7 1021.51H161.699Z" fill="url(#paint3_angular_5_20)" fill-opacity="0.2"/>
+        <path id="branch2" d="M716.04 1574.04C677.894 1654.66 581.611 1689.1 500.985 1650.95C420.36 1612.81 385.923 1516.52 424.069 1435.9L1034.36 145.985C1072.51 65.3598 1168.79 30.9233 1249.41 69.0692C1330.04 107.215 1364.48 203.498 1326.33 284.124L716.04 1574.04Z" fill="url(#paint4_radial_5_20)"/>
+        <path id="branch2" d="M716.04 1574.04C677.894 1654.66 581.611 1689.1 500.985 1650.95C420.36 1612.81 385.923 1516.52 424.069 1435.9L1034.36 145.985C1072.51 65.3598 1168.79 30.9233 1249.41 69.0692C1330.04 107.215 1364.48 203.498 1326.33 284.124L716.04 1574.04Z" fill="url(#paint5_angular_5_20)" fill-opacity="0.2"/>
+        <defs>
+            <radialGradient id="paint0_radial_5_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1442.5 2121.5) rotate(-114.497) scale(2457.1 453.511)">
+                <stop stop-color="white" stop-opacity="0.5"/>
+                <stop offset="0.914855" stop-opacity="0.5"/>
+                <stop offset="1" stop-opacity="0.5"/>
+            </radialGradient>
+            <radialGradient id="paint1_angular_5_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(875.199 860.011) rotate(65.3259) scale(872.666 161.069)">
+                <stop stop-opacity="0"/>
+                <stop offset="0.505"/>
+                <stop offset="1"/>
+            </radialGradient>
+            <radialGradient id="paint2_radial_5_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(2258.12 886.714) rotate(-179.177) scale(2457.1 453.511)">
+                <stop stop-color="white" stop-opacity="0.5"/>
+                <stop offset="0.914855" stop-opacity="0.5"/>
+                <stop offset="1" stop-opacity="0.5"/>
+            </radialGradient>
+            <radialGradient id="paint3_angular_5_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(875.199 860.011) rotate(0.645869) scale(872.666 161.069)">
+                <stop stop-opacity="0"/>
+                <stop offset="0.505"/>
+                <stop offset="1"/>
+            </radialGradient>
+            <radialGradient id="paint4_radial_5_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1490.78 -378.637) rotate(116.143) scale(2457.1 453.511)">
+                <stop stop-color="white" stop-opacity="0.5"/>
+                <stop offset="0.914855" stop-opacity="0.5"/>
+                <stop offset="1" stop-opacity="0.5"/>
+            </radialGradient>
+            <radialGradient id="paint5_angular_5_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(875.199 860.011) rotate(-64.0341) scale(872.666 161.069)">
+                <stop stop-opacity="0"/>
+                <stop offset="0.505"/>
+                <stop offset="1"/>
+            </radialGradient>
+        </defs>
+    </svg>    <div id="logo" style="width: 100px; height: 100px; background: #FFF; border-radius: 50%;"></div>
+</div>
+<div id="main-content">
+    <!-- Content from second HTML will be loaded here -->
 </div>
 
-<!-- notification for small viewports and landscape oriented smartphones -->
-<div class="device-notification">
-  <a class="device-notification--logo">
-    <alt="Yaroster">
-    <h4>Your display may be a bit too small...</h4>
-  </a>
-  <p class="device-notification--message">I have much to show ! Please orient your device to portrait or find a larger screen. You won't be disappointed.</p>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    document.getElementById('logo').addEventListener('click', function() {
+        var tl = gsap.timeline();
 
-<div class="perspective effect-rotate-left">
-  <div class="container"><div class="outer-nav--return"></div>
-    <div id="viewport" class="l-viewport">
-      <div class="l-wrapper">
-        <header class="header">
-          <a class="header--logo">
-            <img src="assets/img/logo.svg">
-            <p>Yaroster</p>
-          </a>
-            <div class="dropdown">
-              <button class="dropbtn"><img src="assets/img/zhong.svg"></button>
-              <div class="dropdown-content">
-                <a href="/">English</a>
-                <a href="fr">Français</a>
-                <a href="zh">中文</a>
-                <a href="ar">العربية</a>
-              </div>
-          </a>
-        </header>
-        <nav class="l-side-nav">
-          <ul class="side-nav">
-            <li class="is-active"><span>Home</span></li>
-            <li ><span>Projects</span></li>
-            <li><span>About</span></li>
-          </ul>
-        </nav>
-        <ul class="l-main-content main-content">
-          <li class="l-section section section--is-active">
-            <div class="intro">
-              <div class="intro--banner">
-                <h1>Primétoile:</h1>
-                <h2>A different<br>kind SF-VN.</h2>
-                <button class="cta">Browse the code
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                  <span class="btn-background"></span>
-                </button>
-                <img src="assets/img/introduction-visual.png" alt="Welcome">
-              </div>
-              <div class="intro--options">
-                <a href="/wa" target="_blank">
-                  <h3>weebanalyser 2.0</h3>
-                  <p>A fun tool to analyse your "weebness" made by a weeb for weebs.</p>
-                </a>
-                <a href="https://github.com/Yaroster/Primetoile" target="_blank">
-                  <h3>Primétoile</h3>
-                  <p>A SF visual novel in an alternative universe, <br> Explore a mysterious planet's deepest secrets.</p>
-                </a>
-                <a href="https://www.figma.com/proto/oNuFVZ3D80Z75shIHkdDwp/VStudy-Draft?node-id=148%3A122&scaling=scale-down" target="_blank">
-                  <h3>vStudy</h3>
-                  <p>An open-source community-based study app for iOS and Android.</p>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="l-section section">
-            <div class="work">
-              <h2>Current Projects</h2>
-              <div class="work--lockup">
-                <ul class="slider">
-                  <li class="slider--item slider--item-left">
-                    <a href="https://www.figma.com/proto/oNuFVZ3D80Z75shIHkdDwp/VStudy-Draft?node-id=148%3A122&scaling=scale-down" target="_blank">
-                      <div class="slider--item-image">
-                        <img src="https://raw.githubusercontent.com/Yaroster/yaro/main/Logo_vStudy_Blank.svg">
-                      </div>
-                      <p class="slider--item-title">vStudy</p>
-                      <p class="slider--item-description">An open-source community-based study app for iOS and Android.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-center">
-                    <a href="https://github.com/Yaroster/Primetoile" target="_blank">
-                      <div class="slider--item-image">
-                        <img src="https://raw.githubusercontent.com/Yaroster/yaro/main/Logo_Primetoile_Blank.svg">
-                      </div>
-                      <p class="slider--item-title">Primétoile</p>
-                      <p class="slider--item-description">A SF visual novel in an alternative universe. <br> Exploring a planet's deepest secrets.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-right">
-                    <a href="https://github.com/Yaroster/yaro" target="_blank">
-                      <div class="slider--item-image">
-                        <img src="https://raw.githubusercontent.com/Yaroster/yaro/main/Logo_Yaroster_Blank.svg">
-                      </div>
-                      <p class="slider--item-title">YARO</p>
-                      <p class="slider--item-description">A repo filled with many design ideas, <br> All in vector formats.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item">
-                    <a href="/wa" target="_blank">
-                      <div class="slider--item-image">
-                        <img src="https://raw.githubusercontent.com/Yaroster/yaro/main/Logo_weebanalyser_2.0.svg">
-                      </div>
-                      <p class="slider--item-title">weebanalyser 2.0</p>
-                      <p class="slider--item-description">A fun tool to analyse your "weebness" made by a weeb for weebs.</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item">
-                    <a href="/librairie" target="_blank">
-                      <div class="slider--item-image">
-                        <img src="https://raw.githubusercontent.com/Yaroster/yaro/main/Logo_Librairie.svg">
-                      </div>
-                      <p class="slider--item-title">Librairie</p>
-                      <p class="slider--item-description">A compilation of essays and written productions (French).</p>
-                    </a>
-                  </li>
-                </ul>
-                <div class="slider--prev">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
-                  </g>
-                  </svg>
-                </div>
-                <div class="slider--next">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="l-section section">
-            <div class="about">
-              <div class="about--banner">
-                <h2>Yaroster</h2>
-                <h1>Aspiring Software Engineer</h1>
-                <h3>C# - Ruby - Python - Swift - JS - HTML - CSS.</h3>
-                <a href="https://yaroster.com/CV.pdf">My Resumé
-                  <span>
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                    </g>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-              <div class="about--options">
-                <a href="https://github.com/Yaroster" target="_blank">
-                </a>
-                <a href="https://twitter.com/Yaroster" target="_blank">
-                </a>
-                <a href="https://www.instagram.com/yaroster/" target="_blank">
-                </a>
-                <a href="https://steepster.com/yaroster" target="_blank">
-                </a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
-<script src="assets/js/functions-min.js"></script>
+        tl.to('#branch1', {duration: 1, x: -window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in"})
+            .to('#branch2', {duration: 1, x: window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in"}, 0)
+            .to('#branch3', {duration: 1, y: window.innerHeight * 3, ease: "power1.in"}, 0)
+            .to('#svg-container', {duration: 1, scale: 0, ease: "power1.in"}, '-=1')
+            .call(function() {
+                $('#main-content').load('main-content.html', function() {
+                    $('#main-content').fadeIn(1000, function() {
+                        // After main content fades in, fade out background2 and remove it
+                        $('.background2').animate({opacity: 0}, 1000, function() {
+                            $(this).remove(); // Removes the background2 div from the DOM after fade out
+                        });
+                    });
+                });
+            });
+    });
+</script>
+
+
 </body>
 </html>
