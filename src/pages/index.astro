@@ -11,7 +11,7 @@ import { SOCIALS } from "../data/socials";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yaroster</title>
-    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <style>
         body, html {
@@ -290,26 +290,28 @@ import { SOCIALS } from "../data/socials";
   import gsap from "gsap";
   import $ from "jquery";
   const logo = document.getElementById('logo');
-  if (logo) {
-    logo.addEventListener('click', function() {
-      // Your code here
-    });
-  }
-        var tl = gsap.timeline();
+if (logo) {
+  logo.addEventListener('click', function() {
+    // Trigger the GSAP animation
+    var tl = gsap.timeline();
 
-        tl.to('#branch1', {duration: 1, x: -window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in"})
-            .to('#branch2', {duration: 1, x: window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in"}, 0)
-            .to('#branch3', {duration: 1, y: window.innerHeight * 3, ease: "power1.in"}, 0)
-            .to('#svg-container', {duration: 1, scale: 0, ease: "power1.in"}, '-=1')
-            .call(function() {
-                const mainContent = document.getElementById('main-content');
-                if (mainContent) {
-                  mainContent.style.display = 'block';
-                }
-                $('.background2').animate({opacity: 0}, 1000, function() {
-                    $(this).remove();
-                });
-            });
+    tl.to('#branch1', {duration: 1, x: -window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in"})
+      .to('#branch2', {duration: 1, x: window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in"}, 0)
+      .to('#branch3', {duration: 1, y: window.innerHeight * 3, ease: "power1.in"}, 0)
+      .to('#svg-container', {duration: 1, scale: 0, ease: "power1.in"}, '-=1')
+      .call(function() {
+        // After the animation, show the main content
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+          mainContent.style.display = 'block'; // Show the main content
+        }
+        $('.background2').animate({opacity: 0}, 1000, function() {
+          $(this).remove(); // Optionally remove the background after fading out
+        });
+      });
+  });
+}
+
 </script>
 </body>
 </html>
