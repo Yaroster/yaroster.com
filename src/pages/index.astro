@@ -149,7 +149,7 @@ import { SOCIALS } from "../data/socials";
       
                     <a
                       data-ccursor
-                      href="mailto:yaroster.com"
+                      href="mailto:chat@yaroster.com"
                       class="inline-flex transition-all border-neutral-700 hover:border-opacity-0 border-opacity-50 shadow rounded-md border backdrop-blur-xl bg-neutral-400/10 px-3 py-2.5 items-center text-white font-semibold group p-2 text-sm gap-x-2 mt-4"
                     >
                       <span>📧 Let's Chat!</span>
@@ -289,10 +289,9 @@ import { SOCIALS } from "../data/socials";
 <script>
   import gsap from "gsap";
   import $ from "jquery";
-  const logo = document.getElementById('logo');
-if (logo) {
-  logo.addEventListener('click', function() {
-    // Trigger the GSAP animation
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // GSAP animation sequence starts as soon as the page is fully loaded
     var tl = gsap.timeline();
 
     tl.to('#branch1', {duration: 1, x: -window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in"})
@@ -300,7 +299,7 @@ if (logo) {
       .to('#branch3', {duration: 1, y: window.innerHeight * 3, ease: "power1.in"}, 0)
       .to('#svg-container', {duration: 1, scale: 0, ease: "power1.in"}, '-=1')
       .call(function() {
-        // After the animation, show the main content
+        // Show the main content after the animation completes
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
           mainContent.style.display = 'block'; // Show the main content
@@ -310,7 +309,8 @@ if (logo) {
         });
       });
   });
-}
+</script>
+
 
 </script>
 </body>
