@@ -680,37 +680,32 @@
         </html>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    function runAnimationAndRedirect() {
-        var tl = gsap.timeline();
-
-        // Animate the branches and logo container out
-        tl.to('#branch1', { duration: 1, x: -window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in" })
-            .to('#branch2', { duration: 1, x: window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in" }, 0)
-            .to('#branch3', { duration: 1, y: window.innerHeight * 3, ease: "power1.in" }, 0)
-            .to('#svg-container', { duration: 1, scale: 0, ease: "power1.in" }, '-=1')
-            .call(function () {
-                // Redirect to the /portfolio route after the animation
-                window.location.href = '/portfolio';
-            });
-    }
-
-    // Run animation automatically when the page loads
-    window.onload = runAnimationAndRedirect;
-
-    // Optionally, allow the animation to be triggered on click as well
-    document.getElementById('logo').addEventListener('click', function() {
-        runAnimationAndRedirect();
-    });
-</script>
-
-
-
-
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function runAnimationAndRedirect() {
+            var tl = gsap.timeline();
+    
+            // Animate the branches and logo container out
+            tl.to('#branch1', { duration: 1, x: -window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in" })
+                .to('#branch2', { duration: 1, x: window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in" }, 0)
+                .to('#branch3', { duration: 1, y: window.innerHeight * 3, ease: "power1.in" }, 0)
+                .to('#svg-container', { duration: 1, scale: 0, ease: "power1.in" }, '-=1')
+                .call(function () {
+                    // Redirect to the /portfolio route after the animation
+                    window.location.href = '/portfolio';
+                });
+        }
+    
+        // Run animation automatically when the page loads
+        window.onload = runAnimationAndRedirect;
+    
+        // Optionally, allow the animation to be triggered on click as well
+        document.getElementById('logo').addEventListener('click', function() {
+            runAnimationAndRedirect();
+        });
+    </script>
+    
+    
 
 </body>
 
