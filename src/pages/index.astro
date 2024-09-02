@@ -11,6 +11,8 @@ import { SOCIALS } from "../data/socials";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yaroster</title>
+    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml">
+
     <style>
         body, html {
             margin: 0;
@@ -286,8 +288,13 @@ import { SOCIALS } from "../data/socials";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
   import gsap from "gsap";
-  import * as $ from "jquery";
-    document.getElementById('logo').addEventListener('click', function() {
+  import $ from "jquery";
+  const logo = document.getElementById('logo');
+  if (logo) {
+    logo.addEventListener('click', function() {
+      // Your code here
+    });
+  }
         var tl = gsap.timeline();
 
         tl.to('#branch1', {duration: 1, x: -window.innerWidth * 3, y: -window.innerHeight * 3, ease: "power1.in"})
@@ -295,12 +302,14 @@ import { SOCIALS } from "../data/socials";
             .to('#branch3', {duration: 1, y: window.innerHeight * 3, ease: "power1.in"}, 0)
             .to('#svg-container', {duration: 1, scale: 0, ease: "power1.in"}, '-=1')
             .call(function() {
-                document.getElementById('main-content').style.display = 'block';
+                const mainContent = document.getElementById('main-content');
+                if (mainContent) {
+                  mainContent.style.display = 'block';
+                }
                 $('.background2').animate({opacity: 0}, 1000, function() {
                     $(this).remove();
                 });
             });
-    });
 </script>
 </body>
 </html>
