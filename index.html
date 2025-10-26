@@ -54,6 +54,15 @@
             transform: scale(0.95);
         }
 
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -702,6 +711,9 @@
             if (window.animationHasRun) return;
             window.animationHasRun = true;
 
+            // Stop the spinning animation before the exit
+            gsap.killTweensOf("#logo");
+
             var tl = gsap.timeline({
                 onComplete: function() {
                     // Redirect to the portfolio route after the animation
@@ -709,48 +721,55 @@
                 }
             });
             
-            // Animate everything out smoothly
+            // Animate everything out smoothly but faster
             tl.to('#branch1', { 
-                duration: 1.2, 
+                duration: 0.8, 
                 x: -window.innerWidth * 2, 
                 y: -window.innerHeight * 2, 
                 ease: "power2.in" 
             })
             .to('#branch2', { 
-                duration: 1.2, 
+                duration: 0.8, 
                 x: window.innerWidth * 2, 
                 y: -window.innerHeight * 2, 
                 ease: "power2.in" 
             }, 0)
             .to('#branch3', { 
-                duration: 1.2, 
+                duration: 0.8, 
                 y: window.innerHeight * 2, 
                 ease: "power2.in" 
             }, 0)
             .to('#svg-container', { 
-                duration: 1, 
+                duration: 0.7, 
                 scale: 0, 
                 opacity: 0,
                 ease: "power2.in" 
-            }, 0.2)
+            }, 0.1)
             .to('.background2', {
-                duration: 0.8,
+                duration: 0.5,
                 opacity: 0,
                 ease: "power2.inOut"
-            }, 0.4);
+            }, 0.2);
         }
 
         // Automatically run animation when page loads
         window.addEventListener('load', function() {
             // Initial entrance animation for the logo
             gsap.from('#svg-container', { 
-                duration: 0.8, 
+                duration: 0.6, 
                 scale: 0.8, 
                 opacity: 0,
                 ease: "power2.out",
                 onComplete: function() {
+                    // Start spinning the logo
+                    gsap.to("#logo", {
+                        duration: 2,
+                        rotation: 360,
+                        ease: "none",
+                        repeat: -1
+                    });
                     // After the logo appears, wait a bit then start the main animation
-                    setTimeout(runAnimationAndRedirect, 1500); // Wait 1.5 seconds
+                    setTimeout(runAnimationAndRedirect, 1200); // Wait 1.2 seconds
                 }
             });
         });
