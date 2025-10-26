@@ -721,42 +721,42 @@
                 }
             });
             
-            // Animate everything out smoothly but faster
+            // Animate everything out almost instantly
             tl.to('#branch1', { 
-                duration: 0.8, 
+                duration: 0.5, 
                 x: -window.innerWidth * 2, 
                 y: -window.innerHeight * 2, 
                 ease: "power2.in" 
             })
             .to('#branch2', { 
-                duration: 0.8, 
+                duration: 0.5, 
                 x: window.innerWidth * 2, 
                 y: -window.innerHeight * 2, 
                 ease: "power2.in" 
             }, 0)
             .to('#branch3', { 
-                duration: 0.8, 
+                duration: 0.5, 
                 y: window.innerHeight * 2, 
                 ease: "power2.in" 
             }, 0)
             .to('#svg-container', { 
-                duration: 0.7, 
+                duration: 0.4, 
                 scale: 0, 
                 opacity: 0,
                 ease: "power2.in" 
-            }, 0.1)
+            }, 0)
             .to('.background2', {
-                duration: 0.5,
+                duration: 0.3,
                 opacity: 0,
                 ease: "power2.inOut"
-            }, 0.2);
+            }, 0.1);
         }
 
         // Automatically run animation when page loads
         window.addEventListener('load', function() {
             // Initial entrance animation for the logo
             gsap.from('#svg-container', { 
-                duration: 0.6, 
+                duration: 0.3, 
                 scale: 0.8, 
                 opacity: 0,
                 ease: "power2.out",
@@ -768,8 +768,8 @@
                         ease: "none",
                         repeat: -1
                     });
-                    // After the logo appears, wait a bit then start the main animation
-                    setTimeout(runAnimationAndRedirect, 1200); // Wait 1.2 seconds
+                    // After the logo appears, wait a very short time then start the main animation
+                    setTimeout(runAnimationAndRedirect, 200); // Wait 0.2 seconds
                 }
             });
         });
