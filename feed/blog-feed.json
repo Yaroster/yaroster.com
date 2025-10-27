@@ -1,0 +1,775 @@
+{
+  "title": "skoomaDen",
+  "link": "https://skoomaDen.me/",
+  "description": "Welcome to the skoomaDen !",
+  "items": [
+    {
+      "title": "The Donghua Paradox: Identity in Global Media",
+      "link": "https://skoomaDen.me/blog/donghua-paradox/",
+      "description": "Why do multimedia productions borrow foreign aesthetics?",
+      "pubDate": "Mon, 26 May 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-donghua.webp",
+      "language": "en"
+    },
+    {
+      "title": "Le Paradoxe Donghua: L'Identité face au Monde",
+      "link": "https://skoomaDen.me/blog/donghua-paradox-fr/",
+      "description": "Pourquoi les productions multimédias empruntent-elles des esthétiques étrangères ?",
+      "pubDate": "Mon, 26 May 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-donghua.webp",
+      "language": "fr"
+    },
+    {
+      "title": "The Unexpected Resurgence of FMVs",
+      "link": "https://skoomaDen.me/blog/la-resurgence-inattendue-des-fmvs/",
+      "description": "An exploration of the new wave of FMVs hitting the PC market.",
+      "pubDate": "Thu, 20 Mar 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover_fmv.webp",
+      "language": "en"
+    },
+    {
+      "title": "La Résurgence Inattendue des FMVs",
+      "link": "https://skoomaDen.me/blog/la-resurgence-inattendue-des-fmvs-fr/",
+      "description": "Une exploration de la nouvelle vague de FMVs qui frappent le marché PC.",
+      "pubDate": "Thu, 20 Mar 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover_fmv.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Chongqing : La Ville-Montagne Incandescente",
+      "link": "https://skoomaDen.me/blog/chongqing-la-ville-incandescente-fr/",
+      "description": "Un voyage spontané à Chongqing, la ville-montagne cyberpunk aux hotpots brulants.",
+      "pubDate": "Mon, 17 Mar 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover_chongqing.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Chongqing: The Incandescent Mountain City",
+      "link": "https://skoomaDen.me/blog/chongqing-la-ville-incandescente/",
+      "description": "A spontaneous trip to Chongqing, the cyberpunk mountain city with fiery hotpots.",
+      "pubDate": "Mon, 17 Mar 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover_chongqing.webp",
+      "language": "en"
+    },
+    {
+      "title": "Les Marées de l'Influence Culturelle en Asie de l'Est",
+      "link": "https://skoomaDen.me/blog/the-shifting-tides-fr/",
+      "description": "Comment la Chine se bat pour dominer la culture populaire mondiale.",
+      "pubDate": "Wed, 26 Feb 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-shifting.webp",
+      "language": "fr"
+    },
+    {
+      "title": "The Shifting Tides of East Asian Cultural Influence.",
+      "link": "https://skoomaDen.me/blog/the-shifting-tides/",
+      "description": "How China is fighting for global dominance over Pop Culture.",
+      "pubDate": "Wed, 26 Feb 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-shifting.webp",
+      "language": "en"
+    },
+    {
+      "title": "Politics of Palace Dramas: China's Film Industry",
+      "link": "https://skoomaDen.me/blog/politics-of-palace-dramas-china-film-industry/",
+      "description": "A deep dive into China's film industry after the retrocession.",
+      "pubDate": "Sun, 19 Jan 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-yanxi.webp",
+      "language": "en"
+    },
+    {
+      "title": "Drames de Palais: L'Industrie Ciné Chinoise",
+      "link": "https://skoomaDen.me/blog/politics-of-palace-dramas-china-film-industry-fr/",
+      "description": "Une retrospective de l'industrie cinématographique chinoise après la rétrocession.",
+      "pubDate": "Sun, 19 Jan 2025 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-yanxi.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Chinois et Arabe : Le Mur des Cultures",
+      "link": "https://skoomaDen.me/blog/arabes-et-chinois-le-mur-des-cultures-fr/",
+      "description": "Comment l'Occident fait face aux défis culturels en Chine et dans le monde arabe.",
+      "pubDate": "Wed, 06 Nov 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-arabe-chinois.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Chinese and Arabic: The Wall of Cultures",
+      "link": "https://skoomaDen.me/blog/arabes-et-chinois-le-mur-des-cultures/",
+      "description": "How the West faces cultural challenges in China and the Arab world.",
+      "pubDate": "Wed, 06 Nov 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-arabe-chinois.webp",
+      "language": "en"
+    },
+    {
+      "title": "Des Îlots d’Apathie : Sur l'Ignorance",
+      "link": "https://skoomaDen.me/blog/des-ilots-apathie-sur-ignorance-fr/",
+      "description": "Une réflexion sur l'ignorance comme choix face à l'abondance.",
+      "pubDate": "Mon, 28 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-ignorance.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Islands of Apathy: On Ignorance",
+      "link": "https://skoomaDen.me/blog/des-ilots-apathie-sur-ignorance/",
+      "description": "A reflection on ignorance as a conscious choice in an age of abundance.",
+      "pubDate": "Mon, 28 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-ignorance.webp",
+      "language": "en"
+    },
+    {
+      "title": "Isolation and Slice-of-Life: Tales from Toyotoki",
+      "link": "https://skoomaDen.me/blog/isolation-and-slice-of-life-toyotoki/",
+      "description": "When worlds intersect between the heavens above and the earth below.",
+      "pubDate": "Fri, 25 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-toyotoki.webp",
+      "language": "en"
+    },
+    {
+      "title": "Isolement et Slice-of-Life: Tales from Toyotoki",
+      "link": "https://skoomaDen.me/blog/isolation-and-slice-of-life-toyotoki-fr/",
+      "description": "Quand les mondes s'entrecroisent entre hauts cieux et terres dessous.",
+      "pubDate": "Fri, 25 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-toyotoki.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Innovation through Homage: Tyrion Cuthbert",
+      "link": "https://skoomaDen.me/blog/innovation-through-hommage-tyrion-cuthbert/",
+      "description": "It's in new pots that the best soups are made.",
+      "pubDate": "Mon, 21 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-tyrion.webp",
+      "language": "en"
+    },
+    {
+      "title": "L'Innovation par l'Hommage: Tyrion Cuthbert",
+      "link": "https://skoomaDen.me/blog/innovation-through-hommage-tyrion-cuthbert-fr/",
+      "description": "C'est dans les nouveaux pots qu'on fait les meilleures soupes.",
+      "pubDate": "Mon, 21 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-tyrion.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Épisodique vs Sérialisé: L'Échec de Korra",
+      "link": "https://skoomaDen.me/blog/episodic-vs-serialized-how-korra-fails-at-heredity-fr/",
+      "description": "Pourquoi Korra ne parvient pas à hériter de l'héritage de son prédécesseur.",
+      "pubDate": "Wed, 16 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-korra.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Episodic vs Serialized: How Korra Fails at Heredity",
+      "link": "https://skoomaDen.me/blog/episodic-vs-serialized-how-korra-fails-at-heredity/",
+      "description": "Why Korra ultimately falls short of its predecessor's legacy.",
+      "pubDate": "Wed, 16 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-korra.webp",
+      "language": "en"
+    },
+    {
+      "title": "Suffering and Boredom: Endless Eight",
+      "link": "https://skoomaDen.me/blog/subversion-et-stagnation-endless-eight/",
+      "description": "The warm air of a never-ending Japanese summer.",
+      "pubDate": "Tue, 15 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-haruhi.webp",
+      "language": "en"
+    },
+    {
+      "title": "Souffrance et Ennui: Endless Eight",
+      "link": "https://skoomaDen.me/blog/subversion-et-stagnation-endless-eight-fr/",
+      "description": "La chaleur accablante d’un été japonais sans fin.",
+      "pubDate": "Tue, 15 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-haruhi.webp",
+      "language": "fr"
+    },
+    {
+      "title": "How to Ruin an Anime: Oshi No Ko",
+      "link": "https://skoomaDen.me/blog/how-to-ruin-an-anime-oshi-no-ko/",
+      "description": "The incredible ability of a work to sabotage itself.",
+      "pubDate": "Sat, 12 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-oshi-no-ko.webp",
+      "language": "en"
+    },
+    {
+      "title": "Comment Ruiner un Animé: Oshi No Ko",
+      "link": "https://skoomaDen.me/blog/how-to-ruin-an-anime-oshi-no-ko-fr/",
+      "description": "L'incroyable capacité d'une œuvre à se saboter elle-même.",
+      "pubDate": "Sat, 12 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-oshi-no-ko.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Alienation through Space: Lain Iwakura",
+      "link": "https://skoomaDen.me/blog/alienation-through-space/",
+      "description": "A psychoanalysis of the character Lain Iwakura.",
+      "pubDate": "Fri, 11 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-lain.webp",
+      "language": "en"
+    },
+    {
+      "title": "L'Alienation par l'Espace: Lain Iwakura",
+      "link": "https://skoomaDen.me/blog/alienation-through-space-fr/",
+      "description": "Une psychanalyse du personnage de Lain Iwakura.",
+      "pubDate": "Fri, 11 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-lain.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Shinji's Fate: The End of Evangelion",
+      "link": "https://skoomaDen.me/blog/fatum-end-of-evangelion/",
+      "description": "A destiny marked by an inevitable fatality.",
+      "pubDate": "Thu, 10 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-eoe.webp",
+      "language": "en"
+    },
+    {
+      "title": "Le Fatum de Shinji: The End of Evangelion",
+      "link": "https://skoomaDen.me/blog/fatum-end-of-evangelion-fr/",
+      "description": "Un destin marqué d'une fatalité inéluctable.",
+      "pubDate": "Thu, 10 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-eoe.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Un Nouvel Horizon Bien Terne: Animal Crossing",
+      "link": "https://skoomaDen.me/blog/new-horizons-the-hollow-evolution-of-a-beloved-series-fr/",
+      "description": "Tout ce pourquoi New Leaf continue d'éclipser New Horizons.",
+      "pubDate": "Wed, 09 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-acnh.webp",
+      "language": "fr"
+    },
+    {
+      "title": "A Quite Dull New Horizon: Animal Crossing",
+      "link": "https://skoomaDen.me/blog/new-horizons-the-hollow-evolution-of-a-beloved-series/",
+      "description": "A breakdown of why New Leaf continues to outshine New Horizons.",
+      "pubDate": "Wed, 09 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-acnh.webp",
+      "language": "en"
+    },
+    {
+      "title": "The Wild Robot & DreamWorks' Golden Age",
+      "link": "https://skoomaDen.me/blog/the-wild-robot-and-dreamworks-golden-age/",
+      "description": "A critical analysis of DreamWorks and its potential to remain a creative leader in animation.",
+      "pubDate": "Mon, 07 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-dreamworks.webp",
+      "language": "en"
+    },
+    {
+      "title": "Le Robot Sauvage & L'Âge d'Or de DreamWorks",
+      "link": "https://skoomaDen.me/blog/the-wild-robot-and-dreamworks-golden-age-fr/",
+      "description": "Une analyse critique de DreamWorks et de son potentiel à rester un leader créatif dans l'animation.",
+      "pubDate": "Mon, 07 Oct 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-dreamworks.webp",
+      "language": "en"
+    },
+    {
+      "title": "Justice Across Empires: Dai Gyakuten Saiban",
+      "link": "https://skoomaDen.me/blog/dai-gyakuten-saiban/",
+      "description": "Thank you, Shu Takumi.",
+      "pubDate": "Thu, 26 Sep 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-dgs.webp",
+      "language": "en"
+    },
+    {
+      "title": "Justice entre Empires : Dai Gyakuten Saiban",
+      "link": "https://skoomaDen.me/blog/dai-gyakuten-saiban-fr/",
+      "description": "Merci, Shu Takumi.",
+      "pubDate": "Thu, 26 Sep 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-dgs.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Critique de Avantcha",
+      "link": "https://skoomaDen.me/blog/review-of-avantcha-fr/",
+      "description": "Une exploration des offres uniques de thé d'Avantcha.",
+      "pubDate": "Sun, 22 Sep 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-06.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Review of Avantcha",
+      "link": "https://skoomaDen.me/blog/review-of-avantcha/",
+      "description": "An exploration of Avantcha's unique tea offerings.",
+      "pubDate": "Sun, 22 Sep 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-06.webp",
+      "language": "en"
+    },
+    {
+      "title": "Review of T's Teabar",
+      "link": "https://skoomaDen.me/blog/review-of-ts-teabar/",
+      "description": "An evaluation of T's Teabar in Abu Dhabi.",
+      "pubDate": "Mon, 16 Sep 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-01.webp",
+      "language": "en"
+    },
+    {
+      "title": "Critique de T's Teabar",
+      "link": "https://skoomaDen.me/blog/review-of-ts-teabar-fr/",
+      "description": "Une évaluation de T's Teabar à Abu Dhabi.",
+      "pubDate": "Mon, 16 Sep 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-01.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Critique des Thés Matinaux de TWG",
+      "link": "https://skoomaDen.me/blog/review-of-twg-breakfast-teas-fr/",
+      "description": "Une critique de quelques thés du matin de TWG, une marque de thé singapourienne renommée.",
+      "pubDate": "Sun, 15 Sep 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-02.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Review of TWG's Breakfast Teas",
+      "link": "https://skoomaDen.me/blog/review-of-twg-breakfast-teas/",
+      "description": "A review of some of TWG's morning teas, a prominent Singaporean tea brand.",
+      "pubDate": "Sun, 15 Sep 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-02.webp",
+      "language": "en"
+    },
+    {
+      "title": "Beijing: 10 Days of Stories and Tea",
+      "link": "https://skoomaDen.me/blog/beijing-logbook/",
+      "description": "My 10-day trip to China was a whirlwind of stories, tea, and new experiences. Here's a logbook of my adventures.",
+      "pubDate": "Sat, 31 Aug 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-03.webp",
+      "language": "en"
+    },
+    {
+      "title": "Pékin: 10 Jours d'Histoires et de Thé",
+      "link": "https://skoomaDen.me/blog/beijing-logbook-fr/",
+      "description": "Mon voyage de 10 jours en Chine a été une aventure pleine d'histoires, de thé, et de nouvelles expériences. Voici le journal de mes aventures.",
+      "pubDate": "Sat, 31 Aug 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-03.webp",
+      "language": "fr"
+    },
+    {
+      "title": "Une Chine Contrastée : Pouvoir, Politique et les Récits Occidentaux.",
+      "link": "https://skoomaDen.me/blog/contrasting-china-brown-economy-fr/",
+      "description": "Une critique conjointe des livres les plus récents du Dr. Brown et du Dr. Economy.",
+      "pubDate": "Thu, 15 Aug 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-04.webp",
+      "language": "fr"
+    },
+    {
+      "title": "A Contrasted China: Power, Policy, and the Western Narratives.",
+      "link": "https://skoomaDen.me/blog/contrasting-china-brown-economy/",
+      "description": "A joint review of both Dr. Brown and Dr. Economy's most recent books.",
+      "pubDate": "Thu, 15 Aug 2024 20:00:00 GMT",
+      "cover": "https://skoomaDen.me/covers/cover-04.webp",
+      "language": "en"
+    },
+    {
+      "title": "White2tea Tea Club — July 2024 !",
+      "link": "https://skoomaDen.me/blog/july-2024-w2t-tea-club/",
+      "description": "Excited to dive into the new teas!",
+      "pubDate": "Tue, 23 Jul 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2024 Moon Bear Minis by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2024-moon-bear-minis-by-white2tea/",
+      "description": "Review of the 2024 Moon Bear Minis by white2tea.",
+      "pubDate": "Sat, 06 Jul 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2024 Gas Minis by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2024-gas-minis-by-white2tea/",
+      "description": "Review of the 2024 Gas Minis by white2tea.",
+      "pubDate": "Thu, 04 Jul 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2024 Nightlife Mini by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2024-nightlife-mini-by-white2tea/",
+      "description": "Review of the 2024 Nightlife Mini by white2tea.",
+      "pubDate": "Thu, 04 Jul 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2024 teadontlie Minis by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2024-teadontlie-minis-by-white2tea/",
+      "description": "Review of the 2024 teadontlie Minis by white2tea.",
+      "pubDate": "Thu, 04 Jul 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2024 Philtre Minis by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2024-philtre-minis-by-white2tea/",
+      "description": "Review of the 2024 Philtre Minis by white2tea.",
+      "pubDate": "Sat, 22 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Butterfly of Taiwan by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-butterfly-of-taiwan-by-palais-des-th%C3%A9s/",
+      "description": "Review of the Butterfly of Taiwan by Palais des Thés.",
+      "pubDate": "Sat, 22 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Le Temps Retrouvé by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-le-temps-retrouv%C3%A9-by-palais-des-th%C3%A9s/",
+      "description": "Review of the Le Temps Retrouvé by Palais des Thés.",
+      "pubDate": "Sun, 16 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "New Palais Des Thés Samples !",
+      "link": "https://skoomaDen.me/blog/new-palais-des-thes-samples-/",
+      "description": "Maybe I went overboard, again ?",
+      "pubDate": "Sun, 09 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Jejudo Impérial by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-jejudo-imp%C3%A9rial-by-palais-des-th%C3%A9s/",
+      "description": "Review of the Jejudo Impérial by Palais des Thés.",
+      "pubDate": "Sun, 09 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Milky Oolong by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-milky-oolong-by-palais-des-thes/",
+      "description": "Review of the Milky Oolong by Palais des Thés.",
+      "pubDate": "Sun, 09 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of a Mysterious Green Tea",
+      "link": "https://skoomaDen.me/blog/review-of-a-mystery-green-tea/",
+      "description": "Review of a mysterious green tea I was gifted recently",
+      "pubDate": "Sat, 08 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Lao Chuan Hong by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-lao-chuan-hong/",
+      "description": "My first 100/100 ! One heck of a black tea",
+      "pubDate": "Wed, 05 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "White2tea Tea Club — June 2024 !",
+      "link": "https://skoomaDen.me/blog/june-2024-w2t-tea-club/",
+      "description": "Well this came in early",
+      "pubDate": "Mon, 03 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2021 Sunskate by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2021-sunskate-by-white2tea/",
+      "description": "Review of 2021 Sunskate by white2tea.",
+      "pubDate": "Sat, 01 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "New white2tea teas !!!",
+      "link": "https://skoomaDen.me/blog/teas-arriving-in-july/",
+      "description": "Many minis oh so many minis, my credit card is screaming \"Help me !\"",
+      "pubDate": "Sat, 01 Jun 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Teas that arrived in June!",
+      "link": "https://skoomaDen.me/blog/teas-that-arrived-in-june/",
+      "description": "The (few) teas I've got this month so far !",
+      "pubDate": "Tue, 28 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Teas that arrived in June!",
+      "link": "https://skoomaDen.me/blog/teas-that-arrived-in-july/",
+      "description": "The (few) teas I've got this month so far !",
+      "pubDate": "Tue, 28 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2024 5th Wave by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2024-5th-wave-by-white2tea/",
+      "description": "Review of 2024 5th Wave by white2tea",
+      "pubDate": "Wed, 22 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2024 Great Blue Heron Minis by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2024-great-blue-heron-by-white2tea/",
+      "description": "Review of 2024 Great Blue Heron Minis by white2tea",
+      "pubDate": "Tue, 21 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Planetarian : Un Monde de Rêves et d'Étoiles.",
+      "link": "https://skoomaDen.me/blog/planetarian-fr/",
+      "description": "Dans un monde post-apocalyptique, une fille robot nous guide à travers les rêves des étoiles. Aujourd'hui, plongeons dans Planetarian.",
+      "pubDate": "Fri, 17 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Planetarian: A World of Dreams and Stars.",
+      "link": "https://skoomaDen.me/blog/planetarian/",
+      "description": "In a post-apocalyptic world, a robot girl guides us through dreams of the stars. Today, let's dive into Planetarian.",
+      "pubDate": "Fri, 17 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2024 Spring Old Arbor Raw Puer by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2024-spring-old-arbor-raw-puer/",
+      "description": "Review of 2024 Spring Old Arbor Raw Puer by white2tea.",
+      "pubDate": "Fri, 17 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2018 Turtle Dove by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2018-turtle-dove-by-white2tea/",
+      "description": "Review of 2018 Turtle Dove by white2tea",
+      "pubDate": "Mon, 13 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Chaï Impérial by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-chai-imperial-by-palais-des-the/",
+      "description": "Review of Chaï Impérial by Palais des Thés",
+      "pubDate": "Mon, 13 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Grand Jasmin Mao Feng by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-grand-jasmin-mao-feng/",
+      "description": "Review of Grand Jasmin Mao Feng by Palais des Thés",
+      "pubDate": "Mon, 13 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Thé des Alizés by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-the-des-alisees-by-palais-des-thes/",
+      "description": "Review of Thé des Alizés by Palais des Thés",
+      "pubDate": "Mon, 13 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of 2020 Nightlife by white2tea",
+      "link": "https://skoomaDen.me/blog/review-of-2020-nightlift-by-white2tea/",
+      "description": "Review of 2020 Nightlife by white2tea.",
+      "pubDate": "Sat, 11 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Teas that arrived in May!",
+      "link": "https://skoomaDen.me/blog/the-teas-that-arrived-in-may/",
+      "description": "Unboxing and exploring the teas I FINALLY received this month!",
+      "pubDate": "Sat, 11 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Chai Latte and Bar-room Philosophy",
+      "link": "https://skoomaDen.me/blog/chai-latte-and-countertop-philosophy/",
+      "description": "It's 6 am, made myself some Chai Latte and thinking about the eternal quest for success.",
+      "pubDate": "Fri, 03 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Chai Latte et Philosophie de comptoir",
+      "link": "https://skoomaDen.me/blog/chai-latte-and-countertop-philosophy-fr/",
+      "description": "Il est 6h du matin, je me fais un Chai Latte et je réfléchis à la quête éternelle du succès.",
+      "pubDate": "Fri, 03 May 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Bai Mu Dan by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-bai-mu-dan-by-palais-des-thes/",
+      "description": "Review of Bai Mu Dan by Palais des Thés",
+      "pubDate": "Tue, 30 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Thé du Louvre Cote Jardin by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-the-du-louvre-cote-jardin-by-palais-des-thes/",
+      "description": "Review of Thé du Louvre Cote Jardin by Palais des Thés",
+      "pubDate": "Tue, 30 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Teas arriving in May !",
+      "link": "https://skoomaDen.me/blog/teas-arriving-in-may/",
+      "description": "Here are some of the teas that are arriving in May !",
+      "pubDate": "Mon, 29 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Clannad : Mélancolie, Illusions et Souhaits.",
+      "link": "https://skoomaDen.me/blog/clannad-fr/",
+      "description": "Vide, d'un autre monde, un paysage qui s'étend à l'infini, et une fille solitaire qui crée un corps à partir de morceaux de déchets. C'est un robot, un petit robot. Ce monde fonctionne en parallèle avec celui-ci, n'est-ce pas ?",
+      "pubDate": "Sun, 28 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Clannad: Melancholy, Illusions and Wishes.",
+      "link": "https://skoomaDen.me/blog/clannad/",
+      "description": "Empty, otherworldly, an ever-extending landscape and a lonesome girl creating a body from parts of junk. It's a robot, a small robot. This world runs in parallel to this one, right?",
+      "pubDate": "Sun, 28 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of White Pu Erh Brick",
+      "link": "https://skoomaDen.me/blog/review-of-white-pu-erh-brick/",
+      "description": "Review of a mysterious White Pu Erh Brick",
+      "pubDate": "Sun, 28 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "New Teaset, Tray, and an Unpleasant Surprise :/",
+      "link": "https://skoomaDen.me/blog/new_teaset/",
+      "description": "I've been experimenting with new sources for my teaware. Although it's not the most elegant option, one of the more affordable sources I decided to try was AliExpress.",
+      "pubDate": "Sat, 27 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Toaru, ou le Paradoxe du Crossmédia.",
+      "link": "https://skoomaDen.me/blog/toaru_storytelling-fr/",
+      "description": "Le voyage de Toaru à travers le labyrinthe du crossmedia et ce que cela signifie pour l'avenir de la narration.",
+      "pubDate": "Fri, 26 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Toaru, or the Crossmedia Paradox.",
+      "link": "https://skoomaDen.me/blog/toaru_storytelling/",
+      "description": "Toaru's journey through the labyrinth of crossmedia and what it means for the future of storytelling.",
+      "pubDate": "Fri, 26 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Mon classement des parties de Jojo, et pourquoi (spoilers légers).",
+      "link": "https://skoomaDen.me/blog/jojo_ranking-fr/",
+      "description": "Oui, je suis sérieux, c’est mon blog et j’écris ce que je veux.",
+      "pubDate": "Thu, 25 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "My ranking of Jojo parts, and why (mild spoilers).",
+      "link": "https://skoomaDen.me/blog/jojo_ranking/",
+      "description": "Yes, I am serious, this is my blog and I can write whatever I want.",
+      "pubDate": "Thu, 25 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Mes avis Steepster !",
+      "link": "https://skoomaDen.me/blog/my-steepster-reviews--fr/",
+      "description": "Cela fait un moment que j’écris des avis sur Steepster, et je me suis dit que ce serait une bonne idée de les partager ici aussi. Je les publierai par lots, alors restez à l’écoute !",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "fr"
+    },
+    {
+      "title": "My Steepster reviews !",
+      "link": "https://skoomaDen.me/blog/my-steepster-reviews-/",
+      "description": "I have been writing reviews on Steepster for a while now, and I thought it would be a good idea to share them here as well. I will be posting them in batches, so stay tuned !",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Fleur de Sureau et Pêche Bio by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-fleur-de-sureau-et-peche-bio-by-palais-des-thes/",
+      "description": "Review of Fleur de Sureau et Pêche Bio by Palais des Thés",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Grand Yunnan Impérial by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-grand-yunnan-imperial-by-palais-des-thes/",
+      "description": "Review of Grand Yunnan Impérial by Palais des Thés",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Pu Erh Lin Cang BIO by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-pu-erh-lin-cang-bio-by-palais-des-thes/",
+      "description": "Review of Pu Erh Lin Cang BIO by Palais des Thés",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Sencha Ariake by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-sencha-ariake-by-palais-des-thes/",
+      "description": "Review of Sencha Ariake by Palais des Thés",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Thé des Moines by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-the-des-moines-by-palais-des-thes/",
+      "description": "Review of Thé des Moines by Palais des Thés",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Review of Thé du Hammam by Palais des Thés",
+      "link": "https://skoomaDen.me/blog/review-of-th%C3%A9-du-hammam-by-palais-des-thesds/",
+      "description": "Review of Thé du Hammam by Palais des Thés",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    },
+    {
+      "title": "Bienvenue au skoomaDen !",
+      "link": "https://skoomaDen.me/blog/welcome-to-the-skoomaDen-/",
+      "description": "",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "fr"
+    },
+    {
+      "title": "What's in my cupboard, April 2024",
+      "link": "https://skoomaDen.me/blog/whats-in-my-cupboard-april-2024/",
+      "description": "An overview of the teas I drank in April 2024 !",
+      "pubDate": "Wed, 24 Apr 2024 20:00:00 GMT",
+      "cover": null,
+      "language": "en"
+    }
+  ]
+}

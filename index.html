@@ -119,24 +119,18 @@
     <div id="svg-container">
         <svg id="logo" width="1751" height="1721" viewBox="0 0 1751 1721" fill="none" xmlns="http://www.w3.org/2000/svg"
             overflow="visible">
-            <path id="branch3"
-                d="M424.069 284.124C385.923 203.498 420.36 107.215 500.985 69.0693C581.611 30.9234 677.894 65.3598 716.04 145.985L1326.33 1435.9C1364.48 1516.52 1330.04 1612.81 1249.41 1650.95C1168.79 1689.1 1072.51 1654.66 1034.36 1574.04L424.069 284.124Z"
-                fill="url(#paint0_radial_5_20)" />
-            <path id="branch3"
-                d="M424.069 284.124C385.923 203.498 420.36 107.215 500.985 69.0693C581.611 30.9234 677.894 65.3598 716.04 145.985L1326.33 1435.9C1364.48 1516.52 1330.04 1612.81 1249.41 1650.95C1168.79 1689.1 1072.51 1654.66 1034.36 1574.04L424.069 284.124Z"
-                fill="url(#paint1_angular_5_20)" fill-opacity="0.2" />
-            <path id="branch1"
-                d="M161.699 1021.51C72.5055 1021.51 0.199463 949.205 0.199463 860.011C0.199463 770.817 72.5055 698.511 161.699 698.511H1588.7C1677.89 698.511 1750.2 770.817 1750.2 860.011C1750.2 949.205 1677.89 1021.51 1588.7 1021.51H161.699Z"
-                fill="url(#paint2_radial_5_20)" />
-            <path id="branch1"
-                d="M161.699 1021.51C72.5055 1021.51 0.199463 949.205 0.199463 860.011C0.199463 770.817 72.5055 698.511 161.699 698.511H1588.7C1677.89 698.511 1750.2 770.817 1750.2 860.011C1750.2 949.205 1677.89 1021.51 1588.7 1021.51H161.699Z"
-                fill="url(#paint3_angular_5_20)" fill-opacity="0.2" />
-            <path id="branch2"
-                d="M716.04 1574.04C677.894 1654.66 581.611 1689.1 500.985 1650.95C420.36 1612.81 385.923 1516.52 424.069 1435.9L1034.36 145.985C1072.51 65.3598 1168.79 30.9233 1249.41 69.0692C1330.04 107.215 1364.48 203.498 1326.33 284.124L716.04 1574.04Z"
-                fill="url(#paint4_radial_5_20)" />
-            <path id="branch2"
-                d="M716.04 1574.04C677.894 1654.66 581.611 1689.1 500.985 1650.95C420.36 1612.81 385.923 1516.52 424.069 1435.9L1034.36 145.985C1072.51 65.3598 1168.79 30.9233 1249.41 69.0692C1330.04 107.215 1364.48 203.498 1326.33 284.124L716.04 1574.04Z"
-                fill="url(#paint5_angular_5_20)" fill-opacity="0.2" />
+            <g id="strand-diag-left">
+                <path d="M424.069 284.124C385.923 203.498 420.36 107.215 500.985 69.0693C581.611 30.9234 677.894 65.3598 716.04 145.985L1326.33 1435.9C1364.48 1516.52 1330.04 1612.81 1249.41 1650.95C1168.79 1689.1 1072.51 1654.66 1034.36 1574.04L424.069 284.124Z"
+                    fill="url(#paint0_radial_5_20)" />
+            </g>
+            <g id="strand-horizontal">
+                <path d="M161.699 1021.51C72.5055 1021.51 0.199463 949.205 0.199463 860.011C0.199463 770.817 72.5055 698.511 161.699 698.511H1588.7C1677.89 698.511 1750.2 770.817 1750.2 860.011C1750.2 949.205 1677.89 1021.51 1588.7 1021.51H161.699Z"
+                    fill="url(#paint2_radial_5_20)" />
+            </g>
+            <g id="strand-diag-right">
+                <path d="M716.04 1574.04C677.894 1654.66 581.611 1689.1 500.985 1650.95C420.36 1612.81 385.923 1516.52 424.069 1435.9L1034.36 145.985C1072.51 65.3598 1168.79 30.9233 1249.41 69.0692C1330.04 107.215 1364.48 203.498 1326.33 284.124L716.04 1574.04Z"
+                    fill="url(#paint4_radial_5_20)" />
+            </g>
             <defs>
                 <radialGradient id="paint0_radial_5_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(1442.5 2121.5) rotate(-114.497) scale(2457.1 453.511)">
@@ -245,7 +239,7 @@
                                     <ul class="mt-8 flex items-center justify-center lg:justify-normal gap-x-5"
                                         aria-label="Social media">
                                         <li class="text-xs p-2 rounded" data-ccursor> <a
-                                                class="block hover:text-slate-200" href="https://skoomaden.me"
+                                                class="block hover:text-slate-200" href="https://skoomaDen.me"
                                                 target="_blank" rel="noreferrer noopener"
                                                 aria-label="skoomaDen (opens in a new tab)"> <span
                                                     class="sr-only">skoomaDen</span> <svg width="30" height="30"
@@ -707,6 +701,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         function runAnimationAndRedirect() {
+            // Ensure transforms are applied relative to the SVG viewport
+            gsap.set(['#logo', '#strand-horizontal', '#strand-diag-left', '#strand-diag-right'], { transformOrigin: '50% 50%' });
             // Ensure animation only runs once
             if (window.animationHasRun) return;
             window.animationHasRun = true;
@@ -716,29 +712,15 @@
 
             var tl = gsap.timeline({
                 onComplete: function() {
-                    // Redirect to the portfolio route after the animation
-                    window.location.href = 'portfolio.html';
+                    // Redirect to the hub after the animation
+                    window.location.href = 'hub.html';
                 }
             });
             
-            // Animate everything out almost instantly
-            tl.to('#branch1', { 
-                duration: 0.5, 
-                x: -window.innerWidth * 2, 
-                y: -window.innerHeight * 2, 
-                ease: "power2.in" 
-            })
-            .to('#branch2', { 
-                duration: 0.5, 
-                x: window.innerWidth * 2, 
-                y: -window.innerHeight * 2, 
-                ease: "power2.in" 
-            }, 0)
-            .to('#branch3', { 
-                duration: 0.5, 
-                y: window.innerHeight * 2, 
-                ease: "power2.in" 
-            }, 0)
+            // Animate everything out almost instantly using grouped strands
+            tl.to('#strand-horizontal', { duration: 0.5, xPercent: -200, yPercent: -200, ease: "power2.in" })
+              .to('#strand-diag-right', { duration: 0.5, xPercent: 200, yPercent: -200, ease: "power2.in" }, 0)
+              .to('#strand-diag-left', { duration: 0.5, yPercent: 200, ease: "power2.in" }, 0)
             .to('#svg-container', { 
                 duration: 0.4, 
                 scale: 0, 
