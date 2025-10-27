@@ -37,7 +37,7 @@
                 position: relative;
                 top: auto;
                 margin-bottom: 2rem;
-                margin-top:1rem;
+                margin-top:2rem;
                 padding: 0;
             }
         }
@@ -100,6 +100,20 @@
             color: rgba(245, 245, 250, 0.92);
         }
 
+        @media (max-width: 424px) {
+            .blog-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 0.75rem;
+            }
+
+            .blog-lang {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+        }
+
     </style>
     <script type="module" src="/_astro/hoisted.6zktFTKN.js" defer></script>
 </head>
@@ -123,7 +137,7 @@
                 <div
                     class="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
                     <div class="blog-meta">
-                        <a href="hub.html">← BACK</a>
+                        <a href="hub.html" data-i18n="back-link">← Back</a>
                         <div class="blog-lang" role="group" aria-label="Language" dir="ltr">
                             <button type="button" class="blog-lang__button" data-lang="en">EN</button>
                             <button type="button" class="blog-lang__button" data-lang="fr">FR</button>
@@ -619,6 +633,7 @@ const translations = {
     en: {
         "subtitle": "Dev and UI/UX Designer",
         "chat-button": "📧 Let's Chat!",
+        "back-link": "← Back",
         "section-about": "About",
         "welcome": "Welcome !",
         "intro": "My name is Yaroster, I'm an Aspiring Mathematician.<br>I grew up in Dubai and I speak 🇨🇳, (🇱🇧🇦🇪🇲🇦), 🇫🇷, and 🇺🇸.",
@@ -671,6 +686,7 @@ const translations = {
     fr: {
         "subtitle": "Développeur et Designer UI/UX",
         "chat-button": "📧 Discutons !",
+        "back-link": "← Retour",
         "section-about": "À propos",
         "welcome": "Bienvenue !",
         "intro": "Je m'appelle Yaroster, je suis un mathématicien en devenir.<br>J'ai grandi à Dubaï et je parle 🇨🇳, (🇱🇧🇦🇪🇲🇦), 🇫🇷 et 🇺🇸.",
@@ -723,6 +739,7 @@ const translations = {
     ar: {
         "subtitle": "مطوّر ومصمم واجهات المستخدم",
         "chat-button": "📧 تواصل معي!",
+        "back-link": "→ رجوع",
         "section-about": "نبذة عني",
         "welcome": "مرحباً!",
         "intro": "اسمي ياروسْتَر، وأنا رياضي طموح.<br>نشأت في دبي وأتحدث 🇨🇳، (🇱🇧🇦🇪🇲🇦)، 🇫🇷، و 🇺🇸.",
@@ -775,6 +792,7 @@ const translations = {
     zh: {
         "subtitle": "开发者与UI/UX设计师",
         "chat-button": "📧 联系我！",
+        "back-link": "← 返回",
         "section-about": "关于我",
         "welcome": "欢迎！",
         "intro": "我叫Yaroster(立言)，是一名立志成为数学家的学生。<br>我在迪拜长大，会说 🇨🇳、(🇱🇧🇦🇪🇲🇦)、🇫🇷 和 🇺🇸。",
