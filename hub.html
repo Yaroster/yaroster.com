@@ -324,6 +324,32 @@
     const content = document.querySelector('.hub-content');
     const duration = 650;
 
+    const resetHubState = () => {
+        buttons.forEach((navButton) => {
+            navButton.style.removeProperty('opacity');
+            navButton.style.removeProperty('transition');
+            delete navButton.dataset.animating;
+        });
+        if (content) {
+            content.style.removeProperty('transform');
+            content.style.removeProperty('opacity');
+        }
+        if (heading) {
+            heading.style.removeProperty('transform');
+            heading.style.removeProperty('opacity');
+            heading.style.removeProperty('transition');
+        }
+        document.querySelectorAll('.hub-link-clone').forEach((clone) => clone.remove());
+        sessionStorage.removeItem('hubTransition');
+    };
+
+    resetHubState();
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            resetHubState();
+        }
+    });
+
     buttons.forEach((button) => {
         const href = button.getAttribute('href');
         if (!href) return;
