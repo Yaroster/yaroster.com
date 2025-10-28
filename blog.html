@@ -32,7 +32,11 @@
 
         .blog-wrapper {
             position: relative;
-            min-height: 100vh;
+        }
+
+        .blog-wrapper > .mx-auto {
+            padding-top: clamp(2.5rem, 6vh, 4rem);
+            padding-bottom: clamp(2.5rem, 6vh, 4rem);
         }
 
         .blog-meta {
@@ -41,8 +45,8 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            margin-bottom: 2rem;
-            margin-top: 2rem;
+            margin-top: 0;
+            margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
         }
 
         .blog-meta a {
@@ -60,7 +64,7 @@
         }
 
         .lede {
-            margin-bottom: 3rem;
+            margin-bottom: clamp(2rem, 4vh, 3rem);
         }
 
         .lede p {
@@ -71,12 +75,12 @@
             display: grid;
             gap: clamp(1.5rem, 3vw, 2.5rem);
             grid-template-columns: repeat(2, 1fr);
-            margin-bottom: 3rem;
+            margin-bottom: clamp(2rem, 4vh, 3rem);
             transition: transform 520ms var(--hub-ease), opacity 520ms var(--hub-ease);
         }
 
         /* Handle odd number of items - last item spans 2 columns if it's alone */
-        .blog-card:last-child:nth-child(odd) {
+        .blog-grid:not([data-clamped="true"]) .blog-card:last-child:nth-child(odd) {
             grid-column: 1 / -1;
         }
 
@@ -92,7 +96,7 @@
             }
             
             /* For 3-column grid, if last item is alone, span 2 columns and center */
-            .blog-card:last-child:nth-child(3n+1) {
+            .blog-grid:not([data-clamped="true"]) .blog-card:last-child:nth-child(3n+1) {
                 grid-column: 2 / 4;
             }
         }
@@ -103,11 +107,18 @@
             }
             
             /* For 4-column grid, handle last item scenarios */
-            .blog-card:last-child:nth-child(4n+1) {
+            .blog-grid:not([data-clamped="true"]) .blog-card:last-child:nth-child(4n+1) {
                 grid-column: 2 / 4;
             }
-            .blog-card:last-child:nth-child(4n+3) {
+            .blog-grid:not([data-clamped="true"]) .blog-card:last-child:nth-child(4n+3) {
                 grid-column: 3 / 5;
+            }
+        }
+
+        
+        @media (min-width: 1830px) {
+            .blog-grid {
+                grid-template-columns: repeat(5, 1fr);
             }
         }
 
@@ -132,6 +143,10 @@
             text-decoration: none;
             color: inherit;
             transition: transform 240ms var(--hub-ease), border-color 240ms var(--hub-ease), box-shadow 240ms var(--hub-ease);
+        }
+
+        .blog-card.is-clamped-hidden {
+            display: none !important;
         }
 
         .blog-card:hover,
@@ -188,7 +203,7 @@
         }
 
         .blog-open {
-            margin: 0 auto 4rem;
+            margin: 0 auto clamp(2rem, 5vh, 3.5rem);
             display: inline-flex;
             align-items: center;
             gap: 0.45rem;
@@ -442,6 +457,10 @@ const translations = {
     const externalButtons = document.querySelectorAll('[data-blog-open]');
     const languageButtons = Array.from(document.querySelectorAll('[data-blog-lang]'));
 
+    let lastRenderedItems = [];
+    let lastRenderOptions = { message: '', fallback: false };
+    let resizeDebounceId;
+
     let selectedLang = detectLanguage();
     sessionStorage.setItem('blogLanguage', selectedLang);
 
@@ -462,8 +481,46 @@ const translations = {
 
     updateLanguageButtons();
 
+    const clampGridToFirstRowIfOverflow = () => {
+        if (!listRoot) return;
+        const cards = Array.from(listRoot.querySelectorAll('.blog-card'));
+        if (!cards.length) {
+            listRoot.removeAttribute('data-clamped');
+            return;
+        }
+        cards.forEach((card) => card.classList.remove('is-clamped-hidden'));
+        listRoot.removeAttribute('data-clamped');
+
+        const mediaQuery = window.matchMedia('(min-width: 1024px)');
+        const isDesktop = typeof mediaQuery.matches === 'boolean' ? mediaQuery.matches : window.innerWidth >= 1024;
+        if (!isDesktop) return;
+
+        requestAnimationFrame(() => {
+            const scrollHeight = Math.max(
+                document.documentElement?.scrollHeight || 0,
+                document.body?.scrollHeight || 0
+            );
+            if (scrollHeight <= window.innerHeight + 1) return;
+
+            const firstRowTop = cards[0].offsetTop;
+            let hiddenAny = false;
+            for (let i = 1; i < cards.length; i += 1) {
+                if (Math.abs(cards[i].offsetTop - firstRowTop) > 1) {
+                    cards[i].classList.add('is-clamped-hidden');
+                    hiddenAny = true;
+                }
+            }
+            if (hiddenAny) {
+                listRoot.setAttribute('data-clamped', 'true');
+            }
+        });
+    };
+
     const renderPosts = (items, { message = '', fallback = false } = {}) => {
         if (!listRoot) return;
+        lastRenderedItems = items.slice();
+        lastRenderOptions = { message, fallback };
+        listRoot.removeAttribute('data-clamped');
         listRoot.innerHTML = '';
         if (!items.length) {
             const empty = document.createElement('div');
@@ -514,6 +571,7 @@ const translations = {
                 fragment.append(card);
             });
             listRoot.append(fragment);
+            clampGridToFirstRowIfOverflow();
         }
 
         if (statusNode) {
@@ -607,6 +665,14 @@ const translations = {
     });
 
     loadFeed();
+
+    window.addEventListener('resize', () => {
+        if (!lastRenderedItems.length) return;
+        clearTimeout(resizeDebounceId);
+        resizeDebounceId = setTimeout(() => {
+            renderPosts(lastRenderedItems, lastRenderOptions);
+        }, 120);
+    });
 
     externalButtons.forEach((btn) => {
         btn.addEventListener('click', () => {

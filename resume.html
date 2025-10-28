@@ -92,6 +92,17 @@
     .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
     .chip { background: transparent; border: 1px solid var(--rule); color: #4b5563; border-radius: 999px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; }
     .back { color: #374151; text-decoration: none; font-weight: 600; }
+    
+    /* Two-column layout for compact sections */
+    .compact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 24px;
+      margin-top: 12px;
+    }
+    @media (max-width: 640px) {
+      .compact-grid { grid-template-columns: 1fr; }
+    }
 
     /* Print styles */
     @page { size: A4; margin: 1cm; }
@@ -118,6 +129,7 @@
       .compact { margin: 6px 0 2px; }
       .compact h2 { font-size: 9px; margin-bottom: 2px; letter-spacing: 0.1em; }
       .compact .desc { line-height: 1.2; }
+      .compact-grid { grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-top: 6px; }
       a { color: #000; text-decoration: none; }
     }
   </style>
@@ -283,26 +295,34 @@
       </div>
     </section>
 
-    <section class="compact" aria-labelledby="awards-h">
-      <h2 id="awards-h" data-i18n="section-awards">Awards</h2>
-      <div class="desc" data-i18n="awards-text">Winner of EU’s AI for Sustainability Hackathon, 1M Arab Coders.</div>
-    </section>
-    <section class="compact" aria-labelledby="languages-h">
-      <h2 id="languages-h" data-i18n="section-languages">Languages</h2>
-      <div class="desc" data-i18n="languages-text">Mandarin Chinese (HSK-Certified), English (Fluent, IELTS-Certified), French (Native), Arabic.</div>
-    </section>
-    <section class="compact" aria-labelledby="tech-h">
-      <h2 id="tech-h" data-i18n="section-technologies">Technologies</h2>
-      <div class="desc" data-i18n="technologies-text">Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.</div>
-    </section>
-    <section class="compact" aria-labelledby="skills-h">
-      <h2 id="skills-h" data-i18n="section-skills">Skills</h2>
-      <div class="desc" data-i18n="skills-text">UI/UX Design, Web Development, Data Science, Reverse Engineering.</div>
-    </section>
-    <section class="compact" aria-labelledby="interests-h">
-      <h2 id="interests-h" data-i18n="section-interests">Interests</h2>
-      <div class="desc" data-i18n="interests-text">Tea, Reading and Blogging.</div>
-    </section>
+    <div class="rule"></div>
+
+    <div class="compact-grid">
+      <section class="compact" aria-labelledby="awards-h">
+        <h2 id="awards-h" data-i18n="section-awards">Awards</h2>
+        <div class="desc" data-i18n="awards-text">Winner of EU's AI for Sustainability Hackathon, 1M Arab Coders.</div>
+      </section>
+      <section class="compact" aria-labelledby="languages-h">
+        <h2 id="languages-h" data-i18n="section-languages">Languages</h2>
+        <div class="desc" data-i18n-html="languages-text">Mandarin Chinese (HSK-Certified), English (Fluent, IELTS-Certified), French (Native), Arabic.</div>
+      </section>
+      <section class="compact" aria-labelledby="projects-h">
+        <h2 id="projects-h" data-i18n="section-projects">Projects</h2>
+        <div class="desc" data-i18n-html="projects-text">skoomaDen (Blog), Secunda (AI Visual Novel Engine), Masser (Minecraft Mod+Server).</div>
+      </section>
+      <section class="compact" aria-labelledby="tech-h">
+        <h2 id="tech-h" data-i18n="section-technologies">Technologies</h2>
+        <div class="desc" data-i18n="technologies-text">Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.</div>
+      </section>
+      <section class="compact" aria-labelledby="skills-h">
+        <h2 id="skills-h" data-i18n="section-skills">Skills</h2>
+        <div class="desc" data-i18n="skills-text">UI/UX Design, Web Development, Data Science, Reverse Engineering.</div>
+      </section>
+      <section class="compact" aria-labelledby="interests-h">
+        <h2 id="interests-h" data-i18n="section-interests">Interests</h2>
+        <div class="desc" data-i18n="interests-text">Tea, Reading and Blogging.</div>
+      </section>
+    </div>
   </div>
 
   <script>
@@ -403,10 +423,12 @@
         // Tail sections
         'section-awards': 'Awards',
         'section-languages': 'Languages',
+        'section-projects': 'Projects',
         'section-technologies': 'Technologies',
         'section-interests': 'Interests',
-        'awards-text': 'Winner of EU’s AI for Sustainability Hackathon, 1M Arab Coders.',
+        'awards-text': "Winner of EU's AI for Sustainability Hackathon, 1M Arab Coders.",
         'languages-text': 'Mandarin Chinese (HSK-Certified), English (Fluent, IELTS-Certified), French (Native), Arabic.',
+        'projects-text': 'skoomaDen (Blog), Secunda (AI Visual Novel Engine),<br>Masser (Minecraft Mod+Server).',
         'technologies-text': 'Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.',
         'skills-text': 'UI/UX Design, Web Development, Data Science, Reverse Engineering.',
         'interests-text': 'Tea, Reading and Blogging.'
@@ -504,10 +526,12 @@
         // Tail sections
         'section-awards': 'Distinctions',
         'section-languages': 'Langues',
+        'section-projects': 'Projets',
         'section-technologies': 'Technologies',
         'section-interests': 'Intérêts',
-        'awards-text': 'Lauréat du hackathon européen « AI for Sustainability », 1M Arab Coders.',
-        'languages-text': 'Mandarin (certifié HSK), Anglais (courant, IELTS), Français (natif), Arabe.',
+        'awards-text': 'Lauréat du hackathon européen « AI for Sustainability », 1M Arab Coders.',
+        'languages-text': 'Mandarin (certifié HSK), Anglais (courant, IELTS),<br>Français (natif), Arabe.',
+        'projects-text': 'skoomaDen (Blog), Secunda (Moteur de visual novel IA),<br>Masser (Mod+Serveur Minecraft).',
         'technologies-text': 'Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.',
         'skills-text': 'UI/UX, Web, Data Science, Rétro‑ingénierie.',
         'interests-text': 'Thé, lecture et blogging.'
@@ -605,10 +629,12 @@
         // Tail sections
         'section-awards': 'الجوائز',
         'section-languages': 'اللغات',
+        'section-projects': 'المشاريع',
         'section-technologies': 'التقنيات',
         'section-interests': 'الاهتمامات',
         'awards-text': 'الفائز في هاكاثون الاتحاد الأوروبي «الذكاء الاصطناعي للاستدامة»، 1M Arab Coders.',
-        'languages-text': 'الماندرين (HSK)، الإنجليزية (IELTS)، الفرنسية (لغة أم)، العربية.',
+        'languages-text': 'الماندرين (HSK)، الإنجليزية (IELTS)،<br>الفرنسية (لغة أم)، العربية.',
+        'projects-text': 'skoomaDen (مدونة)، Secunda (محرك رواية مرئية بالذكاء الاصطناعي)،<br>Masser (خادم ومود Minecraft).',
         'technologies-text': 'Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.',
         'skills-text': 'تصميم UI/UX، تطوير الويب، علم البيانات، هندسة عكسية.',
         'interests-text': 'الشاي، القراءة، التدوين.'
@@ -706,10 +732,12 @@
         // Tail sections
         'section-awards': '奖项',
         'section-languages': '语言',
+        'section-projects': '项目',
         'section-technologies': '技术',
         'section-interests': '兴趣',
-        'awards-text': '欧盟“AI for Sustainability”黑客松获胜者，1M Arab Coders。',
-        'languages-text': '中文普通话（HSK 认证）、英语（流利，IELTS 认证）、法语（母语）、阿拉伯语。',
+        'awards-text': '欧盟"AI for Sustainability"黑客松获胜者，1M Arab Coders。',
+        'languages-text': '中文普通话（HSK 认证）、英语（流利，IELTS 认证）、<br>法语（母语）、阿拉伯语。',
+        'projects-text': 'skoomaDen（博客）、Secunda（AI 视觉小说引擎）、<br>Masser（Minecraft 模组+服务器）。',
         'technologies-text': 'Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.',
         'skills-text': 'UI/UX 设计、Web 开发、数据科学、逆向工程。',
         'interests-text': '茶、阅读、写博客。'
