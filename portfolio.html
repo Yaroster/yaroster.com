@@ -884,16 +884,25 @@ const translations = {
         });
     }
 
+    function updateResumeLink(lang) {
+        const resumeLink = document.querySelector('a[href*="resume.html"]');
+        if (resumeLink) {
+            resumeLink.href = `./resume.html?lang=${lang}`;
+        }
+    }
+
     function applyLanguage(code) {
         sessionStorage.setItem('blogLanguage', code);
         applyTranslations(code);
         updateButtons(code);
+        updateResumeLink(code);
     }
 
     // Initialize
     const currentLang = detectLanguage();
     applyTranslations(currentLang);
     updateButtons(currentLang);
+    updateResumeLink(currentLang);
 
     // Add click handlers to language buttons
     document.querySelectorAll('.blog-lang__button').forEach(btn => {
