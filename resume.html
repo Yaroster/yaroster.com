@@ -64,18 +64,42 @@
       padding: 8px 12px;
       cursor: pointer;
     }
-    .btn.secondary { background: #fff; color: #111827; }
+    .btn.secondary {
+      background: #fff;
+      color: #111827;
+      font-size: 0.85rem;
+    }
     header {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 8px 16px;
-      align-items: center;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
       margin: 24px 0 12px;
     }
+    header > div:first-child { flex: 1 1 auto; min-width: 0; }
     h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin: 0; }
     .subtitle { color: var(--muted); font-weight: 600; font-size: 1.125rem; }
-    .contact { color: var(--muted); display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: flex-end; }
-    .contact a { color: inherit; text-decoration: none; }
+    .contact {
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      margin-left: auto;
+      flex: 0 1 420px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      align-self: flex-end;
+    }
+    .contact a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .contact a:hover,
+    .contact a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
     .rule { height: 1px; background: var(--rule); margin: 12px 0 20px; }
     section { margin: 18px 0 8px; }
     h2 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.14em; color: #111827; margin: 0 0 8px; }
@@ -89,9 +113,17 @@
     .spacer { flex: 1 1 auto; }
     .resume-list { margin: 6px 0 0; padding-left: 18px; }
     .resume-list li { margin: 3px 0; }
-    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-    .chip { background: transparent; border: 1px solid var(--rule); color: #4b5563; border-radius: 999px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; }
     .back { color: #374151; text-decoration: none; font-weight: 600; }
+    .shell > section {
+      border-top: 1px solid var(--rule);
+      margin: 26px 0 10px;
+      padding-top: 14px;
+    }
+    .shell > section:first-of-type {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
     
     /* Two-column layout for compact sections */
     .compact-grid {
@@ -99,6 +131,20 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px 24px;
       margin-top: 12px;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .contact {
+        margin-left: 0;
+        justify-content: flex-end;
+        gap: 8px;
+        flex: 1 1 auto;
+        align-self: flex-start;
+      }
     }
     @media (max-width: 640px) {
       .compact-grid { grid-template-columns: 1fr; }
@@ -110,10 +156,23 @@
       html, body { font-size: 12px; line-height: 1.35; }
       .toolbar { display: none !important; }
       .shell { max-width: none; margin: 0; padding: 0.2cm 0.4cm; }
-      header { gap: 6px 12px; margin: 8px 0 6px; }
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 8px 0 6px;
+      }
       h1 { font-size: 22px; }
       .subtitle { font-size: 13px; }
-      .contact { gap: 8px; }
+      .contact {
+        gap: 6px;
+        margin-left: auto;
+        flex: 0 1 320px;
+        justify-content: flex-end;
+        align-self: flex-end;
+        letter-spacing: 0.04em;
+      }
       .contact a { border-bottom: 0; }
       .rule { margin: 6px 0 10px; }
       section { margin: 10px 0 6px; }
@@ -124,12 +183,12 @@
       .desc { margin: 3px 0 0; }
       .resume-list { margin: 4px 0 0; padding-left: 14px; }
       .resume-list li { margin: 1px 0; }
-      .chips { gap: 4px; }
-      .chip { border: 0; background: transparent; color: #000; padding: 0 4px; font-size: 0.72rem; }
       .compact { margin: 6px 0 2px; }
       .compact h2 { font-size: 9px; margin-bottom: 2px; letter-spacing: 0.1em; }
       .compact .desc { line-height: 1.2; }
       .compact-grid { grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-top: 6px; }
+      .shell > section { border-top: 1px solid #d1d5db; margin: 16px 0 8px; padding-top: 10px; }
+      .shell > section:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }
       a { color: #000; text-decoration: none; }
     }
   </style>
@@ -145,7 +204,7 @@
       </div>
       <div class="actions">
         <a href="portfolio.html" class="btn secondary" data-i18n="back">Back</a>
-        <button type="button" class="btn" id="printBtn" data-i18n="download">Download PDF</button>
+        <button type="button" class="btn" id="downloadBtn" data-i18n="download">Download PDF</button>
       </div>
     </div>
 
@@ -154,14 +213,11 @@
         <h1>Yaroster</h1>
         <div class="subtitle" data-i18n="tagline">Math@Sorbonne</div>
       </div>
-      <div class="contact chips">
-        <a class="chip" href="https://twitter.com/Yaroster" target="_blank" rel="noreferrer noopener">Twitter/X</a>
-        <a class="chip" href="https://www.goodreads.com/user/show/183255061-yaroster" target="_blank" rel="noreferrer noopener">Goodreads</a>
-        <a class="chip" href="https://github.com/Yaroster" target="_blank" rel="noreferrer noopener">GitHub</a>
-        <a class="chip" href="mailto:chat@yaroster.com">chat@yaroster.com</a>
-        <a class="chip" href="https://yaroster.com" target="_blank" rel="noreferrer noopener">yaroster.com</a>
-        <a class="chip" href="https://skoomaDen.me" target="_blank" rel="noreferrer noopener">skoomaDen.me</a>
-        <a class="chip" href="https://www.teaandcoffee.club" target="_blank" rel="noreferrer noopener">teaandcoffee.club</a>
+      <div class="contact">
+        <a href="mailto:chat@yaroster.com">Mail</a>
+        <a href="https://github.com/Yaroster" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a href="https://www.goodreads.com/user/show/183255061-yaroster" target="_blank" rel="noreferrer noopener">Goodreads</a>
+        <a href="https://twitter.com/Yaroster" target="_blank" rel="noreferrer noopener">Twitter</a>
       </div>
     </header>
     <div class="rule"></div>
@@ -325,6 +381,8 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     // Subset of translations used by the résumé
     const translations = {
@@ -435,7 +493,7 @@
       },
       fr: {
         back: '← Retour',
-        download: 'Télécharger en PDF',
+        download: 'Téléc. PDF',
         'section-education': 'Formation',
         'section-experience': 'Expérience',
         'section-skills': 'Compétences',
@@ -744,6 +802,8 @@
       }
     };
 
+    let currentLang = 'en';
+
     function detectLanguage() {
       const stored = sessionStorage.getItem('blogLanguage');
       if (stored && translations[stored]) return stored;
@@ -779,20 +839,306 @@
     }
 
     function applyLanguage(lang) {
+      currentLang = lang;
       sessionStorage.setItem('blogLanguage', lang);
       applyTranslations(lang);
     }
 
     const params = new URLSearchParams(location.search);
     const paramLang = params.get('lang');
-    const currentLang = (paramLang && translations[paramLang]) ? paramLang : detectLanguage();
+    currentLang = (paramLang && translations[paramLang]) ? paramLang : detectLanguage();
     applyTranslations(currentLang);
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
     });
-    document.getElementById('printBtn')?.addEventListener('click', () => window.print());
+
+    function normalizeText(value) {
+      return (value || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function extractTextContent(node, preserveBreaks = false) {
+      if (!node) return '';
+      const text = node.innerText || node.textContent || '';
+      if (!preserveBreaks) return normalizeText(text);
+      return text
+        .replace(/\r\n/g, '\n')
+        .split('\n')
+        .map((line) => line.trim())
+        .filter(Boolean)
+        .join('\n');
+    }
+
+    function extractResumeData(root) {
+      const data = {
+        name: normalizeText(root.querySelector('header h1')?.textContent || ''),
+        subtitle: normalizeText(root.querySelector('header .subtitle')?.textContent || ''),
+        contacts: [],
+        sections: [],
+        compact: []
+      };
+
+      data.contacts = Array.from(root.querySelectorAll('.contact a')).map((link) => {
+        const label = normalizeText(link.textContent || '');
+        const href = link.getAttribute('href') || '';
+        return label ? { label, href } : null;
+      }).filter(Boolean);
+
+      Array.from(root.querySelectorAll('section')).forEach((section) => {
+        if (section.closest('.compact-grid')) return;
+        const sectionTitle = normalizeText(section.querySelector('h2')?.textContent || '');
+        const items = Array.from(section.querySelectorAll(':scope > .item')).map((item) => {
+          const headingPrimary = item.querySelector('h3 span:not(.spacer):not(.meta)');
+          const title = normalizeText((headingPrimary || item.querySelector('h3'))?.textContent || '');
+          const date = normalizeText(item.querySelector('h3 .meta:last-of-type')?.textContent || '');
+          const meta = Array.from(item.querySelectorAll(':scope > .meta'))
+            .map((el) => normalizeText(el.textContent || ''))
+            .filter(Boolean);
+          const descs = Array.from(item.querySelectorAll(':scope > .desc'))
+            .map((el) => normalizeText(el.innerText || el.textContent || ''))
+            .filter(Boolean);
+          const bullets = Array.from(item.querySelectorAll('ul li'))
+            .map((li) => normalizeText(li.innerText || li.textContent || ''))
+            .filter(Boolean);
+
+          return { title, date, meta, descs, bullets };
+        }).filter((entry) => entry.title || entry.date || entry.meta.length || entry.descs.length || entry.bullets.length);
+
+        if (sectionTitle || items.length) {
+          data.sections.push({ title: sectionTitle, items });
+        }
+      });
+
+      data.compact = Array.from(root.querySelectorAll('.compact-grid .compact')).map((section) => {
+        const title = normalizeText(section.querySelector('h2')?.textContent || '');
+        const text = extractTextContent(section.querySelector('.desc'), true);
+        return { title, text };
+      }).filter((entry) => entry.title || entry.text);
+
+      return data;
+    }
+
+    function buildContactLine(contacts) {
+      if (!contacts || !contacts.length) return null;
+      const inline = [];
+      contacts.forEach((entry, index) => {
+        inline.push({
+          text: entry.label,
+          style: 'contactLink',
+          link: entry.href || undefined
+        });
+        if (index < contacts.length - 1) {
+          inline.push({ text: ' · ', style: 'contactDivider' });
+        }
+      });
+      return {
+        alignment: 'right',
+        style: 'contactLine',
+        text: inline
+      };
+    }
+
+    function buildPdfDefinition(data, langCode) {
+      const titleSuffix = langCode.toUpperCase();
+      const pageMarginX = 26;
+      const pageMarginY = 30;
+      const usableWidth = 595.28 - (pageMarginX * 2); // A4 width minus horizontal margins
+      const docDefinition = {
+        info: {
+          title: `Yaroster Résumé (${titleSuffix})`
+        },
+        pageSize: 'A4',
+        pageMargins: [pageMarginX, pageMarginY, pageMarginX, pageMarginY],
+        defaultStyle: {
+          font: 'Roboto',
+          color: '#0a0a0a',
+          fontSize: 9,
+          lineHeight: 1.2
+        },
+        styles: {
+          name: { fontSize: 20, bold: true, color: '#0a0a0a', lineHeight: 1.05 },
+          subtitle: { fontSize: 11, color: '#374151', margin: [0, 1, 0, 0] },
+          contactLine: { fontSize: 8, color: '#4b5563', margin: [0, 0, 0, 0], lineHeight: 1.2 },
+          sectionHeading: { fontSize: 9, bold: true, characterSpacing: 1.2, margin: [0, 7, 0, 3], color: '#111827' },
+          itemTitle: { fontSize: 10, bold: true, color: '#111827' },
+          itemDate: { fontSize: 8, color: '#4b5563', alignment: 'right' },
+          itemMeta: { fontSize: 8, color: '#4b5563', margin: [0, 1, 0, 0] },
+          itemParagraph: { fontSize: 9, color: '#111827', margin: [0, 1, 0, 0], lineHeight: 1.15 },
+          itemList: { fontSize: 9, color: '#111827', margin: [0, 1, 0, 0], lineHeight: 1.15 },
+          compactHeading: { fontSize: 8.5, bold: true, characterSpacing: 1, color: '#111827' },
+          compactText: { fontSize: 8.5, color: '#4b5563', margin: [0, 1, 0, 0], lineHeight: 1.25 },
+          contactLink: { fontSize: 8, color: '#111827', bold: true },
+          contactDivider: { fontSize: 8, color: '#9ca3af' }
+        },
+        content: []
+      };
+      const headerLeft = [];
+      if (data.name) headerLeft.push({ text: data.name, style: 'name' });
+      if (data.subtitle) headerLeft.push({ text: data.subtitle, style: 'subtitle' });
+      const contactLine = buildContactLine(data.contacts);
+      const headerColumns = [];
+      if (headerLeft.length) {
+        headerColumns.push({ width: '*', stack: headerLeft });
+      }
+      if (contactLine) {
+        const estimatedLeftHeight = headerLeft.length > 1 ? 34 : 24;
+        const contactHeight = 12;
+        const offset = Math.max(0, estimatedLeftHeight - contactHeight);
+        if (!contactLine.margin) {
+          contactLine.margin = [0, offset, 0, 0];
+        }
+        headerColumns.push(Object.assign({ width: 'auto' }, contactLine));
+      }
+      if (headerColumns.length) {
+        docDefinition.content.push({
+          columns: headerColumns,
+          columnGap: 18,
+          margin: [0, 0, 0, contactLine ? 6 : 5]
+        });
+      }
+      docDefinition.content.push({
+        canvas: [{
+          type: 'line',
+          x1: 0,
+          y1: 0,
+          x2: usableWidth,
+          y2: 0,
+          lineWidth: 1,
+          lineColor: '#e5e7eb'
+        }],
+        margin: [0, 7, 0, 4]
+      });
+
+      data.sections.forEach((section, sectionIndex) => {
+        if (sectionIndex > 0) {
+          docDefinition.content.push({
+            canvas: [{
+              type: 'line',
+              x1: 0,
+              y1: 0,
+              x2: usableWidth,
+              y2: 0,
+              lineWidth: 0.75,
+              lineColor: '#e5e7eb'
+            }],
+            margin: [0, 8, 0, 5]
+          });
+        }
+        if (section.title) {
+          docDefinition.content.push({ text: section.title, style: 'sectionHeading' });
+        }
+        section.items.forEach((item, itemIndex) => {
+          const stack = [];
+          if (item.title || item.date) {
+            const columns = [];
+            columns.push({ text: item.title, style: 'itemTitle', width: '*' });
+            if (item.date) {
+              columns.push({ text: item.date, style: 'itemDate', width: 'auto' });
+            }
+            stack.push({ columns, columnGap: 12 });
+          }
+          if (item.meta.length) {
+            stack.push({ text: item.meta.join(' · '), style: 'itemMeta' });
+          }
+          item.descs.forEach((desc) => {
+            stack.push({ text: desc, style: 'itemParagraph' });
+          });
+          if (item.bullets.length) {
+            stack.push({ ul: item.bullets, style: 'itemList' });
+          }
+          if (stack.length) {
+            docDefinition.content.push({ stack, margin: [0, itemIndex === 0 ? 4 : 3, 0, 0] });
+          }
+        });
+      });
+
+      if (data.compact.length) {
+        docDefinition.content.push({
+          canvas: [{
+            type: 'line',
+            x1: 0,
+            y1: 0,
+            x2: usableWidth,
+            y2: 0,
+            lineWidth: 0.75,
+            lineColor: '#e5e7eb'
+          }],
+          margin: [0, 10, 0, 6]
+        });
+        const columns = [[], []];
+        data.compact.forEach((entry, index) => {
+          const colIndex = index % 2;
+          const columnStack = columns[colIndex];
+          columnStack.push({
+            text: entry.title,
+            style: 'compactHeading',
+            margin: [0, columnStack.length ? 5 : 0, 0, 1]
+          });
+          if (entry.text) {
+            columnStack.push({ text: entry.text, style: 'compactText' });
+          }
+        });
+
+        docDefinition.content.push({
+          columns: columns.map((stack) => ({
+            width: '*',
+            stack: stack.length ? stack : [{ text: '' }]
+          })),
+          columnGap: 16,
+          margin: [0, 8, 0, 0]
+        });
+      }
+
+      return docDefinition;
+    }
+
+    async function downloadResumePdf(autoTriggered = false) {
+      const shell = document.querySelector('.shell');
+      const downloadBtn = document.getElementById('downloadBtn');
+      if (!shell) {
+        window.print();
+        return;
+      }
+
+      if (typeof pdfMake === 'undefined' || !pdfMake.createPdf) {
+        window.print();
+        return;
+      }
+
+      const langCode = (currentLang || 'en').toLowerCase();
+      if (langCode === 'ar' || langCode === 'zh') {
+        if (autoTriggered) {
+          setTimeout(() => window.print(), 100);
+        } else {
+          const url = new URL(window.location.href);
+          url.searchParams.set('lang', langCode);
+          url.searchParams.set('download', '1');
+          window.open(url.toString(), '_blank', 'noopener');
+        }
+        return;
+      }
+
+      const resumeData = extractResumeData(shell);
+      const docDefinition = buildPdfDefinition(resumeData, langCode);
+
+      downloadBtn?.setAttribute('disabled', 'true');
+      downloadBtn?.setAttribute('aria-busy', 'true');
+      try {
+        pdfMake.createPdf(docDefinition).download(`Yaroster-Resume-${langCode.toUpperCase()}.pdf`);
+      } catch (error) {
+        console.error(error);
+        window.print();
+      } finally {
+        downloadBtn?.removeAttribute('disabled');
+        downloadBtn?.removeAttribute('aria-busy');
+      }
+    }
+
+    const downloadBtn = document.getElementById('downloadBtn');
+    downloadBtn?.addEventListener('click', () => {
+      downloadResumePdf(false);
+    });
     if (params.get('download') === '1') {
-      setTimeout(() => window.print(), 300);
+      setTimeout(() => downloadResumePdf(true), 300);
     }
   </script>
 </body>
