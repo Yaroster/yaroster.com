@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Résumé" />
+  <title>Résumé</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --text: #0a0a0a;
+      --muted: #4b5563;
+      --rule: #e5e7eb;
+      --chip-bg: #f3f4f6;
+      --chip-fg: #111827;
+    }
+    html, body { margin: 0; padding: 0; }
+    body {
+      color: var(--text);
+      background: #fff;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.5;
+    }
+    .shell {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0 12px;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      z-index: 10;
+    }
+    .lang { display: flex; gap: 8px; flex-wrap: wrap; }
+    .lang button {
+      appearance: none;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      color: #111827;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+    .lang button[data-active="true"] { border-color: #111827; }
+    .actions { display: flex; gap: 8px; }
+    .btn {
+      appearance: none;
+      border: 1px solid #111827;
+      background: #111827;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .btn.secondary { background: #fff; color: #111827; }
+    header {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 8px 16px;
+      align-items: center;
+      margin: 24px 0 12px;
+    }
+    h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin: 0; }
+    .subtitle { color: var(--muted); font-weight: 600; font-size: 1.125rem; }
+    .contact { color: var(--muted); display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: flex-end; }
+    .contact a { color: inherit; text-decoration: none; }
+    .rule { height: 1px; background: var(--rule); margin: 12px 0 20px; }
+    section { margin: 18px 0 8px; }
+    h2 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.14em; color: #111827; margin: 0 0 8px; }
+    .compact { margin: 10px 0 4px; }
+    .compact h2 { font-size: 0.9rem; letter-spacing: 0.12em; margin-bottom: 2px; }
+    .item { margin: 12px 0; }
+    .item h3 { font-size: 1rem; margin: 0; display:flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+    .meta { color: var(--muted); font-size: 0.93rem; }
+    .desc { margin: 6px 0 0; }
+    .compact .desc { margin: 0; line-height: 1.35; }
+    .spacer { flex: 1 1 auto; }
+    .resume-list { margin: 6px 0 0; padding-left: 18px; }
+    .resume-list li { margin: 3px 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .chip { background: transparent; border: 1px solid var(--rule); color: #4b5563; border-radius: 999px; padding: 2px 6px; font-size: 0.75rem; font-weight: 600; }
+    .back { color: #374151; text-decoration: none; font-weight: 600; }
+
+    /* Print styles */
+    @page { size: A4; margin: 1cm; }
+    @media print {
+      html, body { font-size: 12px; line-height: 1.35; }
+      .toolbar { display: none !important; }
+      .shell { max-width: none; margin: 0; padding: 0.2cm 0.4cm; }
+      header { gap: 6px 12px; margin: 8px 0 6px; }
+      h1 { font-size: 22px; }
+      .subtitle { font-size: 13px; }
+      .contact { gap: 8px; }
+      .contact a { border-bottom: 0; }
+      .rule { margin: 6px 0 10px; }
+      section { margin: 10px 0 6px; }
+      h2 { font-size: 10px; letter-spacing: 0.12em; margin-bottom: 4px; }
+      .item { margin: 6px 0; }
+      .item h3 { gap: 4px; }
+      .meta { font-size: 0.85rem; }
+      .desc { margin: 3px 0 0; }
+      .resume-list { margin: 4px 0 0; padding-left: 14px; }
+      .resume-list li { margin: 1px 0; }
+      .chips { gap: 4px; }
+      .chip { border: 0; background: transparent; color: #000; padding: 0 4px; font-size: 0.72rem; }
+      .compact { margin: 6px 0 2px; }
+      .compact h2 { font-size: 9px; margin-bottom: 2px; letter-spacing: 0.1em; }
+      .compact .desc { line-height: 1.2; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="toolbar" role="group" aria-label="Resume controls">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="fr">FR</button>
+        <button type="button" class="lang-btn" data-lang="ar">AR</button>
+        <button type="button" class="lang-btn" data-lang="zh">ZH</button>
+      </div>
+      <div class="actions">
+        <a href="portfolio.html" class="btn secondary" data-i18n="back">Back</a>
+        <button type="button" class="btn" id="printBtn" data-i18n="download">Download PDF</button>
+      </div>
+    </div>
+
+    <header>
+      <div>
+        <h1>Yaroster</h1>
+        <div class="subtitle" data-i18n="tagline">Math@Sorbonne</div>
+      </div>
+      <div class="contact chips">
+        <a class="chip" href="https://twitter.com/Yaroster" target="_blank" rel="noreferrer noopener">Twitter/X</a>
+        <a class="chip" href="https://www.goodreads.com/user/show/183255061-yaroster" target="_blank" rel="noreferrer noopener">Goodreads</a>
+        <a class="chip" href="https://github.com/Yaroster" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a class="chip" href="mailto:chat@yaroster.com">chat@yaroster.com</a>
+        <a class="chip" href="https://yaroster.com" target="_blank" rel="noreferrer noopener">yaroster.com</a>
+        <a class="chip" href="https://skoomaDen.me" target="_blank" rel="noreferrer noopener">skoomaDen.me</a>
+        <a class="chip" href="https://www.teaandcoffee.club" target="_blank" rel="noreferrer noopener">teaandcoffee.club</a>
+      </div>
+    </header>
+    <div class="rule"></div>
+
+    
+
+    
+
+    <section aria-labelledby="education-h">
+      <h2 id="education-h" data-i18n="section-education">Education</h2>
+      <div class="item">
+        <h3>
+          <span data-i18n="university-1"></span>
+          <span class="spacer"></span>
+          <span class="meta" data-i18n="dates-edu-1">Sept. 2024 - Present</span>
+        </h3>
+        <div class="meta">
+          <span data-i18n="job-title-1"></span>
+          <span class="meta">· <span data-i18n="job-location-1"></span></span>
+        </div>
+        <p class="desc" data-i18n="gpa-1">GPA: 4.0/4.0</p>
+        <p class="desc" data-i18n="edu-extra-1">Founder of Sorbonne’s Tea Club, with over 150 active members meeting every week.</p>
+      </div>
+      <div class="item">
+        <h3>
+          <span data-i18n="university-2"></span>
+          <span class="spacer"></span>
+          <span class="meta" data-i18n="dates-edu-2">Sept. 2023 - Aug. 2024</span>
+        </h3>
+        <div class="meta">
+          <span data-i18n="job-title-2"></span>
+          <span class="meta">· <span data-i18n="job-location-2"></span></span>
+        </div>
+        <p class="desc" data-i18n="gpa-2">GPA: 4.2/6.0</p>
+      </div>
+      <div class="item">
+        <h3>
+          <span data-i18n="university-3"></span>
+          <span class="spacer"></span>
+          <span class="meta" data-i18n="dates-edu-3">Sept. 2021 - Aug. 2023</span>
+        </h3>
+        <div class="meta">
+          <span data-i18n="job-title-3"></span>
+          <span class="meta">· <span data-i18n="job-location-3"></span></span>
+        </div>
+        <p class="desc" data-i18n="gpa-3">GPA: 3.4/4.0</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="experience-h">
+      <h2 id="experience-h" data-i18n="section-experience">Experience</h2>
+      <div class="item">
+        <h3>
+          <span data-i18n="university-6">Sorbonne Université</span>
+          <span class="spacer"></span>
+          <span class="meta" data-i18n="dates-6">Sept. 2025 – Present</span>
+        </h3>
+        <div class="meta">
+          <span data-i18n="job-title-6">Peer Tutor</span>
+          <span class="meta">· <span data-i18n="job-location-6">Abu Dhabi, UAE</span></span>
+        </div>
+        <ul class="resume-list">
+          <li data-i18n="job-description-6a">Providing peer tutoring to Foundation and First-Year students in calculus, linear algebra, and programming.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>
+          <span data-i18n="university-5"></span>
+          <span class="spacer"></span>
+          <span class="meta" data-i18n="dates-5">Aug. 2017 – Jun. 2018</span>
+        </h3>
+        <div class="meta">
+          <span data-i18n="job-title-5"></span>
+          <span class="meta">· <span data-i18n="job-location-5"></span></span>
+        </div>
+        <ul class="resume-list">
+          <li data-i18n="job-description-5a">Splunk Inc. provides operational intelligence software for data analysis.</li>
+          <li data-i18n="job-description-5b">Conducted SWOT analysis to identify opportunities for growth and areas of improvement in service offerings.</li>
+          <li data-i18n="job-description-5c">Utilized Splunk's Data Analysis tools to visualize data streams in real-time.</li>
+        </ul>
+        <p class="desc" data-i18n="job-stack-5">Stack: Splunk Enterprise, REST, SPL</p>
+      </div>
+      <div class="item">
+        <h3>
+          <span data-i18n="university-7">German Neuroscience Center</span>
+          <span class="spacer"></span>
+          <span class="meta" data-i18n="dates-7">Oct. 2017</span>
+        </h3>
+        <div class="meta">
+          <span data-i18n="job-title-7">Neurosurgical Data Extraction</span>
+          <span class="meta">· <span data-i18n="job-location-7">Dubai, UAE</span></span>
+        </div>
+        <ul class="resume-list">
+          <li data-i18n="job-description-7a">The German Neuroscience Center is a medical center in Dubai specializing in neurological conditions.</li>
+          <li data-i18n="job-description-7b">As a Data Extractor, I assisted in extracting and recovering neurosurgical data.</li>
+          <li data-i18n="job-description-7c">Using UFS and DMDE on HFS+ Systems, I successfully extracted lost data.</li>
+          <li data-i18n="job-description-7d">Improved data organization and contributed to clinical workflow efficiency.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>
+          <span data-i18n="university-4"></span>
+          <span class="spacer"></span>
+          <span class="meta" data-i18n="dates-4">Sept. 2017 – Aug. 2017</span>
+        </h3>
+        <div class="meta">
+          <span data-i18n="job-title-4"></span>
+          <span class="meta">· <span data-i18n="job-location-4"></span></span>
+        </div>
+        <ul class="resume-list">
+          <li data-i18n="job-description-4a">Reverse-engineered and localized video games for Arabic-speaking audiences, enhancing cultural accessibility.</li>
+          <li data-i18n="job-description-4b">Built custom tools using C#, Xamarin, and WinForms to streamline localization workflows.</li>
+          <li data-i18n="job-description-4c">Worked extensively with rare and proprietary file formats and game engines.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>
+          <span data-i18n="university-8">Captions Creators</span>
+          <span class="spacer"></span>
+          <span class="meta" data-i18n="dates-8">Jan. 2018 – Aug. 2019</span>
+        </h3>
+        <div class="meta">
+          <span data-i18n="job-title-8">Lead Developer</span>
+          <span class="meta">· <span data-i18n="job-location-8">Remote</span></span>
+        </div>
+        <ul class="resume-list">
+          <li data-i18n="job-description-8a">Open-source project focused on automating subtitles, improving accessibility for deaf and hard-of­ hearing users.</li>
+          <li data-i18n="job-description-8b">Led a team and migrated Legacy projects from Storyboard and Objective-C to SwiftUI and Swift.</li>
+          <li data-i18n="job-description-8c">Coordinated remote collaboration efforts, ensuring timely delivery of features and updates.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="compact" aria-labelledby="awards-h">
+      <h2 id="awards-h" data-i18n="section-awards">Awards</h2>
+      <div class="desc" data-i18n="awards-text">Winner of EU’s AI for Sustainability Hackathon, 1M Arab Coders.</div>
+    </section>
+    <section class="compact" aria-labelledby="languages-h">
+      <h2 id="languages-h" data-i18n="section-languages">Languages</h2>
+      <div class="desc" data-i18n="languages-text">Mandarin Chinese (HSK-Certified), English (Fluent, IELTS-Certified), French (Native), Arabic.</div>
+    </section>
+    <section class="compact" aria-labelledby="tech-h">
+      <h2 id="tech-h" data-i18n="section-technologies">Technologies</h2>
+      <div class="desc" data-i18n="technologies-text">Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.</div>
+    </section>
+    <section class="compact" aria-labelledby="skills-h">
+      <h2 id="skills-h" data-i18n="section-skills">Skills</h2>
+      <div class="desc" data-i18n="skills-text">UI/UX Design, Web Development, Data Science, Reverse Engineering.</div>
+    </section>
+    <section class="compact" aria-labelledby="interests-h">
+      <h2 id="interests-h" data-i18n="section-interests">Interests</h2>
+      <div class="desc" data-i18n="interests-text">Tea, Reading and Blogging.</div>
+    </section>
+  </div>
+
+  <script>
+    // Subset of translations used by the résumé
+    const translations = {
+      en: {
+        // UI
+        back: '← Back',
+        download: 'Download PDF',
+        'section-education': 'Education',
+        'section-experience': 'Experience',
+        'section-skills': 'Skills',
+        'section-links': 'Links',
+        'link-teaandcoffee': 'Tea & Coffee Club',
+        'link-goodreads': 'Goodreads',
+        'link-skoomaden': 'skoomaDen',
+        // Content
+        tagline: 'Math@Sorbonne',
+        subtitle: 'Dev and UI/UX Designer',
+        'job-title-1': 'Bachelor in Mathematics, Specialization in Data Science for Artificial Intelligence',
+        'university-1': 'Sorbonne Université',
+        'job-description-1': 'Currently enrolled in the Bachelor in Mathematics with a specialization in Data Science for Artificial Intelligence, focusing on advanced data science techniques and their applications in AI.',
+        'job-location-1': 'Abu Dhabi, United Arab Emirates',
+        'job-title-2': 'First-Year Computer Science Student',
+        'university-2': 'École Polytechnique Fédérale de Lausanne',
+        'job-description-2': 'Completed my first year in Computer Science, focusing on advanced algorithms, data structures, and software engineering principles.',
+        'job-location-2': 'Lausanne, Switzerland',
+        'job-title-3': 'Preparatory Program for Software Engineering',
+        'university-3': 'École Polytechnique de Montréal',
+        'job-description-3': 'Completed preparatory classes, laying a strong foundation in mathematics, physics, and computer science, with a particular emphasis on problem-solving and analytical thinking.',
+        'job-location-3': 'Montréal, Canada',
+        'job-title-4': 'Romhacker & Video Game Translator',
+        'university-4': 'FTI',
+        'job-description-4': 'Worked on reverse engineering and romhacking projects, translating video games and creating tools to facilitate these tasks using WinForms and the Kuriimu ToolKit.',
+        'job-location-4': 'Remote',
+        'job-title-5': 'Intern',
+        'university-5': 'Splunk',
+        'job-description-5': 'Interned at Splunk, learning the use of enterprise data analysis software and being part of a diverse team.',
+        'job-location-5': 'Dubai, United Arab Emirates',
+        'tech-data-science': 'Data Science',
+        'tech-machine-learning': 'Machine Learning',
+        'tech-ai': 'Artificial Intelligence',
+        'tech-python': 'Python',
+        'tech-r': 'R',
+        'tech-java': 'Java',
+        'tech-swift': 'Swift',
+        'tech-html5': 'HTML5',
+        'tech-css3': 'CSS3',
+        'tech-javascript': 'JavaScript',
+        'tech-mathematics': 'Mathematics',
+        'tech-physics': 'Physics',
+        'tech-problem-solving': 'Problem Solving',
+        'tech-csharp': 'C#',
+        'tech-xamarin': 'Xamarin',
+        'tech-winforms': 'WinForms',
+        'tech-kuriimu': 'Kuriimu ToolKit3DS',
+        'tech-libnx': 'libnx',
+        'tech-splunk': 'Splunk',
+        'tech-data-analysis': 'Data Analysis',
+        // Education extras
+        'dates-edu-1': 'Sept. 2024 - Present',
+        'dates-edu-2': 'Sept. 2023 - Aug. 2024',
+        'dates-edu-3': 'Sept. 2021 - Aug. 2023',
+        'gpa-1': 'GPA: 4.0/4.0',
+        'gpa-2': 'GPA: 4.2/6.0',
+        'gpa-3': 'GPA: 3.4/4.0',
+        'edu-extra-1': 'Founder of Sorbonne’s Tea Club, with over 150 active members meeting every week.',
+        // Experience extras
+        'job-title-6': 'Peer Tutor',
+        'university-6': 'Sorbonne Université',
+        'job-location-6': 'Abu Dhabi, UAE',
+        'dates-6': 'Sept. 2025 – Present',
+        'job-description-6a': 'Providing peer tutoring to Foundation and First-Year students in calculus, linear algebra, and programming.',
+        'dates-5': 'Aug. 2017 – Jun. 2018',
+        'job-description-5a': 'Splunk Inc. provides operational intelligence software for data analysis.',
+        'job-description-5b': 'Conducted SWOT analysis to identify opportunities for growth and areas of improvement in service offerings.',
+        'job-description-5c': "Utilized Splunk's Data Analysis tools to visualize data streams in real-time.",
+        'job-stack-5': 'Stack: Splunk Enterprise, REST, SPL',
+        'job-title-7': 'Neurosurgical Data Extraction',
+        'university-7': 'German Neuroscience Center',
+        'job-location-7': 'Dubai, UAE',
+        'dates-7': 'Oct. 2017',
+        'job-description-7a': 'The German Neuroscience Center is a medical center in Dubai specializing in neurological conditions.',
+        'job-description-7b': 'As a Data Extractor, I assisted in extracting and recovering neurosurgical data.',
+        'job-description-7c': 'Using UFS and DMDE on HFS+ Systems, I successfully extracted lost data.',
+        'job-description-7d': 'Improved data organization and contributed to clinical workflow efficiency.',
+        'dates-4': 'Sept. 2017 – Aug. 2017',
+        'job-description-4a': 'Reverse-engineered and localized video games for Arabic-speaking audiences, enhancing cultural accessibility.',
+        'job-description-4b': 'Built custom tools using C#, Xamarin, and WinForms to streamline localization workflows.',
+        'job-description-4c': 'Worked extensively with rare and proprietary file formats and game engines.',
+        'university-8': 'Captions Creators',
+        'job-title-8': 'Lead Developer',
+        'job-location-8': 'Remote',
+        'dates-8': 'Jan. 2018 – Aug. 2019',
+        'job-description-8a': 'Open-source project focused on automating subtitles, improving accessibility for deaf and hard-of­ hearing users.',
+        'job-description-8b': 'Led a team and migrated Legacy projects from Storyboard and Objective-C to SwiftUI and Swift.',
+        'job-description-8c': 'Coordinated remote collaboration efforts, ensuring timely delivery of features and updates.',
+        // Tail sections
+        'section-awards': 'Awards',
+        'section-languages': 'Languages',
+        'section-technologies': 'Technologies',
+        'section-interests': 'Interests',
+        'awards-text': 'Winner of EU’s AI for Sustainability Hackathon, 1M Arab Coders.',
+        'languages-text': 'Mandarin Chinese (HSK-Certified), English (Fluent, IELTS-Certified), French (Native), Arabic.',
+        'technologies-text': 'Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.',
+        'skills-text': 'UI/UX Design, Web Development, Data Science, Reverse Engineering.',
+        'interests-text': 'Tea, Reading and Blogging.'
+      },
+      fr: {
+        back: '← Retour',
+        download: 'Télécharger en PDF',
+        'section-education': 'Formation',
+        'section-experience': 'Expérience',
+        'section-skills': 'Compétences',
+        'section-links': 'Liens',
+        'link-teaandcoffee': 'Tea & Coffee Club',
+        'link-goodreads': 'Goodreads',
+        'link-skoomaden': 'skoomaDen',
+        tagline: 'Math@Sorbonne',
+        subtitle: 'Développeur et Designer UI/UX',
+        'job-title-1': 'Licence de Mathématiques, spécialisation Science des données pour l’IA',
+        'university-1': 'Sorbonne Université',
+        'job-description-1': "Inscrit en licence de mathématiques avec spécialisation en science des données pour l'intelligence artificielle, axée sur les techniques avancées et leurs applications en IA.",
+        'job-location-1': 'Abou Dabi, Émirats Arabes Unis',
+        'job-title-2': 'Étudiant en 1re année d’informatique',
+        'university-2': 'École Polytechnique Fédérale de Lausanne',
+        'job-description-2': "Première année en informatique, avec un accent sur les algorithmes avancés, les structures de données et les principes d’ingénierie logicielle.",
+        'job-location-2': 'Lausanne, Suisse',
+        'job-title-3': 'Programme préparatoire en génie logiciel',
+        'university-3': 'École Polytechnique de Montréal',
+        'job-description-3': "Classes préparatoires, solide base en mathématiques, physique et informatique, avec un accent sur la résolution de problèmes et la pensée analytique.",
+        'job-location-3': 'Montréal, Canada',
+        'job-title-4': 'Romhacker & Traducteur de jeux vidéo',
+        'university-4': 'FTI',
+        'job-description-4': "Travail en rétro‑ingénierie et romhacking, traduction de jeux vidéo et création d’outils (WinForms, Kuriimu ToolKit).",
+        'job-location-4': 'À distance',
+        'job-title-5': 'Stagiaire',
+        'university-5': 'Splunk',
+        'job-description-5': "Stage chez Splunk, apprentissage des logiciels d’analyse de données d’entreprise et travail au sein d’une équipe diversifiée.",
+        'job-location-5': 'Dubaï, Émirats Arabes Unis',
+        'tech-data-science': 'Data Science',
+        'tech-machine-learning': 'Machine Learning',
+        'tech-ai': 'Intelligence Artificielle',
+        'tech-python': 'Python',
+        'tech-r': 'R',
+        'tech-java': 'Java',
+        'tech-swift': 'Swift',
+        'tech-html5': 'HTML5',
+        'tech-css3': 'CSS3',
+        'tech-javascript': 'JavaScript',
+        'tech-mathematics': 'Mathématiques',
+        'tech-physics': 'Physique',
+        'tech-problem-solving': 'Résolution de problèmes',
+        'tech-csharp': 'C#',
+        'tech-xamarin': 'Xamarin',
+        'tech-winforms': 'WinForms',
+        'tech-kuriimu': 'Kuriimu ToolKit3DS',
+        'tech-libnx': 'libnx',
+        'tech-splunk': 'Splunk',
+        'tech-data-analysis': 'Analyse de données',
+        // Education extras
+        'dates-edu-1': 'sept. 2024 - présent',
+        'dates-edu-2': 'sept. 2023 - août 2024',
+        'dates-edu-3': 'sept. 2021 - août 2023',
+        'gpa-1': 'Moyenne : 4.0/4.0',
+        'gpa-2': 'Moyenne : 4.2/6.0',
+        'gpa-3': 'Moyenne : 3.4/4.0',
+        'edu-extra-1': 'Fondateur du Tea Club de la Sorbonne (>150 membres actifs chaque semaine).',
+        // Experience extras
+        'job-title-6': 'Tuteur pédagogique',
+        'university-6': 'Sorbonne Université',
+        'job-location-6': 'Abou Dabi, EAU',
+        'dates-6': 'sept. 2025 – présent',
+        'job-description-6a': 'Soutien pédagogique en analyse, algèbre linéaire et programmation (fondation et 1ère année).',
+        'dates-5': 'août 2017 – juin 2018',
+        'job-description-5a': "Splunk Inc. fournit des logiciels d’intelligence opérationnelle pour l’analyse de données.",
+        'job-description-5b': 'Analyse SWOT pour identifier des opportunités de croissance et des axes d’amélioration.',
+        'job-description-5c': 'Visualisation de flux de données en temps réel avec les outils Splunk.',
+        'job-stack-5': 'Stack : Splunk Enterprise, REST, SPL',
+        'job-title-7': 'Extraction de données neurochirurgicales',
+        'university-7': 'German Neuroscience Center',
+        'job-location-7': 'Dubaï, EAU',
+        'dates-7': 'oct. 2017',
+        'job-description-7a': 'Centre médical spécialisé en neurologie à Dubaï.',
+        'job-description-7b': 'Extraction et récupération de données neurochirurgicales.',
+        'job-description-7c': 'Utilisation de UFS et DMDE sur systèmes HFS+ pour récupérer des données.',
+        'job-description-7d': 'Amélioration de l’organisation des données et des flux cliniques.',
+        'dates-4': 'sept. 2017 – août 2017',
+        'job-description-4a': 'Rétro‑ingénierie et localisation de jeux vidéo pour un public arabophone.',
+        'job-description-4b': 'Outils personnalisés (C#, Xamarin, WinForms) pour les workflows.',
+        'job-description-4c': 'Travail sur des formats propriétaires et moteurs de jeux.',
+        'university-8': 'Captions Creators',
+        'job-title-8': 'Développeur principal',
+        'job-location-8': 'À distance',
+        'dates-8': 'janv. 2018 – août 2019',
+        'job-description-8a': 'Projet open‑source d’automatisation des sous‑titres, pour l’accessibilité.',
+        'job-description-8b': 'Migration Storyboard/Objective‑C vers SwiftUI/Swift, gestion d’équipe.',
+        'job-description-8c': 'Coordination à distance et livraisons dans les délais.',
+        // Tail sections
+        'section-awards': 'Distinctions',
+        'section-languages': 'Langues',
+        'section-technologies': 'Technologies',
+        'section-interests': 'Intérêts',
+        'awards-text': 'Lauréat du hackathon européen « AI for Sustainability », 1M Arab Coders.',
+        'languages-text': 'Mandarin (certifié HSK), Anglais (courant, IELTS), Français (natif), Arabe.',
+        'technologies-text': 'Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.',
+        'skills-text': 'UI/UX, Web, Data Science, Rétro‑ingénierie.',
+        'interests-text': 'Thé, lecture et blogging.'
+      },
+      ar: {
+        back: '→ رجوع',
+        download: 'تنزيل PDF',
+        'section-education': 'التعليم',
+        'section-experience': 'الخبرات',
+        'section-skills': 'المهارات',
+        'section-links': 'روابط',
+        'link-teaandcoffee': 'Tea & Coffee Club',
+        'link-goodreads': 'Goodreads',
+        'link-skoomaden': 'skoomaDen',
+        tagline: 'Math@Sorbonne',
+        subtitle: 'مطور ومصمم UI/UX',
+        'job-title-1': 'بكالوريوس رياضيات، تخصص علوم البيانات للذكاء الاصطناعي',
+        'university-1': 'جامعة السوربون',
+        'job-description-1': 'ملتحق ببرنامج بكالوريوس الرياضيات بتخصص علوم البيانات للذكاء الاصطناعي، مع تركيز على التقنيات المتقدمة وتطبيقاتها في الذكاء الاصطناعي.',
+        'job-location-1': 'أبوظبي، الإمارات العربية المتحدة',
+        'job-title-2': 'طالب سنة أولى في علوم الحاسوب',
+        'university-2': 'المدرسة الفدرالية البوليتكنيكية في لوزان',
+        'job-description-2': 'أتممت السنة الأولى في علوم الحاسوب مع تركيز على الخوارزميات المتقدمة وهياكل البيانات ومبادئ هندسة البرمجيات.',
+        'job-location-2': 'لوزان، سويسرا',
+        'job-title-3': 'برنامج تحضيري لهندسة البرمجيات',
+        'university-3': 'المدرسة البوليتكنيكية في مونتريال',
+        'job-description-3': 'أتممت الدروس التحضيرية، وبنيت أساسًا قويًا في الرياضيات والفيزياء وعلوم الحاسوب مع تركيز على حل المشكلات والتفكير التحليلي.',
+        'job-location-3': 'مونتريال، كندا',
+        'job-title-4': 'Romhacker ومترجم ألعاب فيديو',
+        'university-4': 'FTI',
+        'job-description-4': 'عملت على الهندسة العكسية ومشاريع romhacking وترجمة الألعاب وإنشاء أدوات مساعدة باستخدام WinForms وKuriimu ToolKit.',
+        'job-location-4': 'عن بُعد',
+        'job-title-5': 'متدرب',
+        'university-5': 'Splunk',
+        'job-description-5': 'تدربت في Splunk وتعلمت استخدام برمجيات تحليل بيانات المؤسسات والعمل ضمن فريق متنوع.',
+        'job-location-5': 'دبي، الإمارات العربية المتحدة',
+        'tech-data-science': 'علوم البيانات',
+        'tech-machine-learning': 'تعلم الآلة',
+        'tech-ai': 'الذكاء الاصطناعي',
+        'tech-python': 'بايثون',
+        'tech-r': 'R',
+        'tech-java': 'جافا',
+        'tech-swift': 'سويفت',
+        'tech-html5': 'HTML5',
+        'tech-css3': 'CSS3',
+        'tech-javascript': 'جافاسكريبت',
+        'tech-mathematics': 'رياضيات',
+        'tech-physics': 'فيزياء',
+        'tech-problem-solving': 'حل المشكلات',
+        'tech-csharp': 'C#',
+        'tech-xamarin': 'Xamarin',
+        'tech-winforms': 'WinForms',
+        'tech-kuriimu': 'Kuriimu ToolKit3DS',
+        'tech-libnx': 'libnx',
+        'tech-splunk': 'Splunk',
+        'tech-data-analysis': 'تحليل البيانات',
+        // Education extras
+        'dates-edu-1': 'سبتمبر 2024 - الآن',
+        'dates-edu-2': 'سبتمبر 2023 - أغسطس 2024',
+        'dates-edu-3': 'سبتمبر 2021 - أغسطس 2023',
+        'gpa-1': 'المعدل: 4.0/4.0',
+        'gpa-2': 'المعدل: 4.2/6.0',
+        'gpa-3': 'المعدل: 3.4/4.0',
+        'edu-extra-1': 'مؤسس نادي الشاي في السوربون (>150 عضوًا نشطًا أسبوعيًا).',
+        // Experience extras
+        'job-title-6': 'مدرّس زميل',
+        'university-6': 'جامعة السوربون أبوظبي',
+        'job-location-6': 'أبوظبي، الإمارات',
+        'dates-6': 'سبتمبر 2025 – الآن',
+        'job-description-6a': 'دعم في التفاضل، الجبر الخطي، والبرمجة (التحضيري والسنة الأولى).',
+        'dates-5': 'أغسطس 2017 – يونيو 2018',
+        'job-description-5a': 'توفر Splunk برمجيات ذكاء تشغيلي لتحليل البيانات.',
+        'job-description-5b': 'تحليل SWOT لتحديد فرص النمو ومجالات التحسين.',
+        'job-description-5c': 'تصوير تدفقات البيانات لحظيًا بأدوات Splunk.',
+        'job-stack-5': 'المكدس: Splunk Enterprise وREST وSPL',
+        'job-title-7': 'استخراج بيانات جراحية عصبية',
+        'university-7': 'German Neuroscience Center',
+        'job-location-7': 'دبي، الإمارات',
+        'dates-7': 'أكتوبر 2017',
+        'job-description-7a': 'مركز طبي متخصص في الاضطرابات العصبية في دبي.',
+        'job-description-7b': 'المساعدة في استخراج واستعادة البيانات الجراحية العصبية.',
+        'job-description-7c': 'استخدام UFS وDMDE على أنظمة HFS+ لاستعادة البيانات.',
+        'job-description-7d': 'تحسين تنظيم البيانات وكفاءة سير العمل.',
+        'dates-4': 'سبتمبر 2017 – أغسطس 2017',
+        'job-description-4a': 'هندسة عكسية وتعريب ألعاب الفيديو للجمهور العربي.',
+        'job-description-4b': 'أدوات مخصصة (#C, Xamarin, WinForms) لتبسيط العمل.',
+        'job-description-4c': 'التعامل مع صيغ ومحرّكات نادرة وملكية.',
+        'university-8': 'Captions Creators',
+        'job-title-8': 'قائد تطوير',
+        'job-location-8': 'عن بُعد',
+        'dates-8': 'يناير 2018 – أغسطس 2019',
+        'job-description-8a': 'مشروع مفتوح المصدر لأتمتة الترجمات وتحسين إمكانية الوصول.',
+        'job-description-8b': 'قيادة الفريق والهجرة إلى SwiftUI/Swift.',
+        'job-description-8c': 'تنسيق العمل عن بُعد وتسليم الميزات.',
+        // Tail sections
+        'section-awards': 'الجوائز',
+        'section-languages': 'اللغات',
+        'section-technologies': 'التقنيات',
+        'section-interests': 'الاهتمامات',
+        'awards-text': 'الفائز في هاكاثون الاتحاد الأوروبي «الذكاء الاصطناعي للاستدامة»، 1M Arab Coders.',
+        'languages-text': 'الماندرين (HSK)، الإنجليزية (IELTS)، الفرنسية (لغة أم)، العربية.',
+        'technologies-text': 'Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.',
+        'skills-text': 'تصميم UI/UX، تطوير الويب، علم البيانات، هندسة عكسية.',
+        'interests-text': 'الشاي، القراءة، التدوين.'
+      },
+      zh: {
+        back: '← 返回',
+        download: '下载 PDF',
+        'section-education': '教育',
+        'section-experience': '经历',
+        'section-skills': '技能',
+        'section-links': '链接',
+        'link-teaandcoffee': 'Tea & Coffee Club',
+        'link-goodreads': 'Goodreads',
+        'link-skoomaden': 'skoomaDen',
+        tagline: 'Math@Sorbonne',
+        subtitle: '开发者与UI/UX设计师',
+        'job-title-1': '数学学士（人工智能数据科学方向）',
+        'university-1': '索邦大学',
+        'job-description-1': '目前攻读数学学士学位，主修人工智能数据科学，专注于高级数据科学技术及其在AI中的应用。',
+        'job-location-1': '阿布扎比，阿拉伯联合酋长国',
+        'job-title-2': '计算机科学一年级学生',
+        'university-2': '洛桑联邦理工学院',
+        'job-description-2': '完成了计算机科学一年级课程，重点学习高级算法、数据结构和软件工程原理。',
+        'job-location-2': '洛桑，瑞士',
+        'job-title-3': '软件工程预科项目',
+        'university-3': '蒙特利尔理工学院',
+        'job-description-3': '完成了预科课程，打下了扎实的数学、物理和计算机科学基础，尤其注重问题解决与分析思维。',
+        'job-location-3': '蒙特利尔，加拿大',
+        'job-title-4': '游戏破解与翻译者',
+        'university-4': 'FTI',
+        'job-description-4': '参与游戏逆向工程与破解项目，翻译电子游戏并开发相关工具，使用WinForms与Kuriimu ToolKit。',
+        'job-location-4': '远程',
+        'job-title-5': '实习生',
+        'university-5': 'Splunk',
+        'job-description-5': '在 Splunk 实习，学习企业数据分析软件的使用，并参与多元化团队合作。',
+        'job-location-5': '迪拜阿联酋',
+        'tech-data-science': '数据科学',
+        'tech-machine-learning': '机器学习',
+        'tech-ai': '人工智能',
+        'tech-python': 'Python',
+        'tech-r': 'R',
+        'tech-java': 'Java',
+        'tech-swift': 'Swift',
+        'tech-html5': 'HTML5',
+        'tech-css3': 'CSS3',
+        'tech-javascript': 'JavaScript',
+        'tech-mathematics': '数学',
+        'tech-physics': '物理',
+        'tech-problem-solving': '问题解决',
+        'tech-csharp': 'C#',
+        'tech-xamarin': 'Xamarin',
+        'tech-winforms': 'WinForms',
+        'tech-kuriimu': 'Kuriimu ToolKit3DS',
+        'tech-libnx': 'libnx',
+        'tech-splunk': 'Splunk',
+        'tech-data-analysis': '数据分析',
+        // Education extras
+        'dates-edu-1': '2024年9月 - 至今',
+        'dates-edu-2': '2023年9月 - 2024年8月',
+        'dates-edu-3': '2021年9月 - 2023年8月',
+        'gpa-1': '绩点：4.0/4.0',
+        'gpa-2': '绩点：4.2/6.0',
+        'gpa-3': '绩点：3.4/4.0',
+        'edu-extra-1': '索邦大学茶会俱乐部创始人（每周活跃成员超过150）。',
+        // Experience extras
+        'job-title-6': '同伴助教',
+        'university-6': '索邦大学阿布扎比分校',
+        'job-location-6': '阿布扎比，阿联酋',
+        'dates-6': '2025年9月 – 至今',
+        'job-description-6a': '为基础与一年级学生提供微积分、线性代数与编程辅导。',
+        'dates-5': '2017年8月 – 2018年6月',
+        'job-description-5a': 'Splunk 提供用于数据分析的运营智能软件。',
+        'job-description-5b': '进行了SWOT分析以识别增长机会与改进方向。',
+        'job-description-5c': '使用 Splunk 工具对实时数据流进行可视化。',
+        'job-stack-5': '技术栈：Splunk Enterprise、REST、SPL',
+        'job-title-7': '神经外科数据提取',
+        'university-7': 'German Neuroscience Center',
+        'job-location-7': '迪拜，阿联酋',
+        'dates-7': '2017年10月',
+        'job-description-7a': '位于迪拜的神经科专科医疗中心。',
+        'job-description-7b': '担任数据提取员，协助提取与恢复神经外科数据。',
+        'job-description-7c': '在 HFS+ 系统上使用 UFS 与 DMDE 成功提取丢失数据。',
+        'job-description-7d': '改进数据组织，提升临床工作流程效率。',
+        'dates-4': '2017年9月 – 2017年8月',
+        'job-description-4a': '为阿拉伯语受众进行游戏本地化与逆向工程。',
+        'job-description-4b': '使用 C#、Xamarin、WinForms 构建工具以简化流程。',
+        'job-description-4c': '大量处理罕见与专有格式及游戏引擎。',
+        'university-8': 'Captions Creators',
+        'job-title-8': '首席开发',
+        'job-location-8': '远程',
+        'dates-8': '2018年1月 – 2019年8月',
+        'job-description-8a': '开源项目，专注字幕自动化，提升无障碍可访问性。',
+        'job-description-8b': '领导团队，将传统项目从 Storyboard/Objective‑C 迁移至 SwiftUI/Swift。',
+        'job-description-8c': '协调远程协作，确保及时交付功能与更新。',
+        // Tail sections
+        'section-awards': '奖项',
+        'section-languages': '语言',
+        'section-technologies': '技术',
+        'section-interests': '兴趣',
+        'awards-text': '欧盟“AI for Sustainability”黑客松获胜者，1M Arab Coders。',
+        'languages-text': '中文普通话（HSK 认证）、英语（流利，IELTS 认证）、法语（母语）、阿拉伯语。',
+        'technologies-text': 'Python, Java, Swift, SQL, C#, Xamarin, Javascript/HTML5/CSS.',
+        'skills-text': 'UI/UX 设计、Web 开发、数据科学、逆向工程。',
+        'interests-text': '茶、阅读、写博客。'
+      }
+    };
+
+    function detectLanguage() {
+      const stored = sessionStorage.getItem('blogLanguage');
+      if (stored && translations[stored]) return stored;
+      const browserLang = (navigator.language || 'en').toLowerCase();
+      if (browserLang.startsWith('fr')) return 'fr';
+      if (browserLang.startsWith('ar')) return 'ar';
+      if (browserLang.startsWith('zh')) return 'zh';
+      return 'en';
+    }
+
+    function setDir(lang) {
+      if (lang === 'ar') document.documentElement.setAttribute('dir', 'rtl');
+      else document.documentElement.setAttribute('dir', 'ltr');
+    }
+
+    function applyTranslations(lang) {
+      const t = translations[lang] || translations.en;
+      // textContent replacements
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+      });
+      // innerHTML replacements
+      document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key]) el.innerHTML = t[key];
+      });
+      // Toggle active language buttons
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.setAttribute('data-active', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
+      });
+      setDir(lang);
+    }
+
+    function applyLanguage(lang) {
+      sessionStorage.setItem('blogLanguage', lang);
+      applyTranslations(lang);
+    }
+
+    const params = new URLSearchParams(location.search);
+    const paramLang = params.get('lang');
+    const currentLang = (paramLang && translations[paramLang]) ? paramLang : detectLanguage();
+    applyTranslations(currentLang);
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
+    });
+    document.getElementById('printBtn')?.addEventListener('click', () => window.print());
+    if (params.get('download') === '1') {
+      setTimeout(() => window.print(), 300);
+    }
+  </script>
+</body>
+</html>
