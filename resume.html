@@ -130,7 +130,10 @@
       .compact h2 { font-size: 9px; margin-bottom: 2px; letter-spacing: 0.1em; }
       .compact .desc { line-height: 1.2; }
       .compact-grid { grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-top: 6px; }
-      a { color: #000; text-decoration: none; }
+      /* Ensure printed PDFs keep hyperlinks and make URLs visible */
+      a[href] { color: #000; text-decoration: underline; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      /* Show the destination next to external links for non-interactive PDFs */
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-weight: normal; color: #000; text-decoration: none; }
     }
   </style>
 </head>
@@ -155,13 +158,13 @@
         <div class="subtitle" data-i18n="tagline">Math@Sorbonne</div>
       </div>
       <div class="contact chips">
+        <a class="chip" href="mailto:chat@yaroster.com">Email</a>
+        <a class="chip" href="https://github.com/Yaroster" target="_blank" rel="noreferrer noopener">GitHub</a>
         <a class="chip" href="https://twitter.com/Yaroster" target="_blank" rel="noreferrer noopener">Twitter/X</a>
         <a class="chip" href="https://www.goodreads.com/user/show/183255061-yaroster" target="_blank" rel="noreferrer noopener">Goodreads</a>
-        <a class="chip" href="https://github.com/Yaroster" target="_blank" rel="noreferrer noopener">GitHub</a>
-        <a class="chip" href="mailto:chat@yaroster.com">chat@yaroster.com</a>
-        <a class="chip" href="https://yaroster.com" target="_blank" rel="noreferrer noopener">yaroster.com</a>
+        <!-- <a class="chip" href="https://yaroster.com" target="_blank" rel="noreferrer noopener">yaroster.com</a>
         <a class="chip" href="https://skoomaDen.me" target="_blank" rel="noreferrer noopener">skoomaDen.me</a>
-        <a class="chip" href="https://www.teaandcoffee.club" target="_blank" rel="noreferrer noopener">teaandcoffee.club</a>
+        <a class="chip" href="https://www.teaandcoffee.club" target="_blank" rel="noreferrer noopener">teaandcoffee.club</a> -->
       </div>
     </header>
     <div class="rule"></div>
