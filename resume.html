@@ -130,10 +130,8 @@
       .compact h2 { font-size: 9px; margin-bottom: 2px; letter-spacing: 0.1em; }
       .compact .desc { line-height: 1.2; }
       .compact-grid { grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-top: 6px; }
-      /* Ensure printed PDFs keep hyperlinks and make URLs visible */
-      a[href] { color: #000; text-decoration: underline; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      /* Show the destination next to external links for non-interactive PDFs */
-      a[href^="http"]::after { content: " (" attr(href) ")"; font-weight: normal; color: #000; text-decoration: none; }
+      /* Ensure printed PDFs keep hyperlinks without showing raw URLs */
+      a[href] { color: #000; text-decoration: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </head>
