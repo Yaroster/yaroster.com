@@ -70,9 +70,45 @@
         .blog-grid {
             display: grid;
             gap: clamp(1.5rem, 3vw, 2.5rem);
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             margin-bottom: 3rem;
             transition: transform 520ms var(--hub-ease), opacity 520ms var(--hub-ease);
+        }
+
+        /* Handle odd number of items - last item spans 2 columns if it's alone */
+        .blog-card:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+        }
+
+        @media (min-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            /* For 3-column grid, if last item is alone, span 2 columns and center */
+            .blog-card:last-child:nth-child(3n+1) {
+                grid-column: 2 / 4;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .blog-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            /* For 4-column grid, handle last item scenarios */
+            .blog-card:last-child:nth-child(4n+1) {
+                grid-column: 2 / 4;
+            }
+            .blog-card:last-child:nth-child(4n+3) {
+                grid-column: 3 / 5;
+            }
         }
 
         .blog-grid__status {
@@ -231,12 +267,12 @@
 
         @media (max-width: 640px) {
             .blog-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
             }
         }
 
         .c-cursor {
-            position: absolute !important;
+            position: fixed !important;
             z-index: 2147483647 !important;
             pointer-events: none !important;
             margin-top: -30px !important;
